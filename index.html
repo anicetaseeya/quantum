@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Futuro Perfecto — Quantum Expansion Intelligence</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#1a2d6b;--navyd:#111d4a;--blue:#2d6be4;--blue2:#1a56c4;
+  --bl:#e8f0fd;--bm:#ccdcf8;--wh:#ffffff;--off:#f5f7fa;
+  --gr:#eef1f6;--gr2:#d8dde8;--gr3:#b0b8cc;
+  --tx:#1a1a2e;--tx2:#3a4060;--tx3:#6b7394;
+  --gn:#0f7a4a;--gnl:#e6f5ee;--am:#8a5c00;--re:#9b1c1c;--rel:#fdeaea;
+}
+body{font-family:'Open Sans',sans-serif;background:var(--wh);color:var(--tx);font-size:14px;line-height:1.6}
+
+/* NAV */
+.nav{background:#fff;border-bottom:1px solid var(--gr);padding:0 2rem;display:flex;align-items:center;height:72px}
+.logo{display:flex;flex-direction:column;gap:2px;text-decoration:none;flex-shrink:0}
+.logo-name{font-family:'Montserrat',sans-serif;font-weight:900;font-size:1.45rem;color:var(--navy);letter-spacing:-.01em;display:flex;align-items:center;gap:6px;line-height:1}
+.logo-eu{font-size:1.1rem}
+.logo-sub{font-family:'Montserrat',sans-serif;font-weight:300;font-size:9px;color:var(--tx3);letter-spacing:.25em;text-transform:uppercase;padding-left:1px}
+.nav-tool-label{margin-left:auto;font-family:'Montserrat',sans-serif;font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--tx3);background:var(--off);border:1px solid var(--gr2);padding:5px 12px}
+
+/* BANNER */
+.banner{background:var(--navy);padding:12px 2rem;display:flex;align-items:center;justify-content:center;gap:1.5rem}
+.banner p{font-size:13px;color:rgba(255,255,255,.88)}
+.banner-btn{background:transparent;border:1.5px solid rgba(255,255,255,.45);color:#fff;font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;padding:7px 20px;cursor:pointer;white-space:nowrap;transition:all .18s}
+.banner-btn:hover{background:#fff;color:var(--navy)}
+
+/* STEP STRIP */
+.steps{background:var(--navy);display:flex;padding:0 2rem}
+.step{flex:1;padding:13px 0;display:flex;align-items:center;gap:8px;border-right:1px solid rgba(255,255,255,.07);position:relative}
+.step:last-child{border-right:none}
+.step.active::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:var(--blue)}
+.sn{width:22px;height:22px;border-radius:50%;background:rgba(255,255,255,.1);color:rgba(255,255,255,.4);font-family:'Montserrat',sans-serif;font-size:10px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.step.active .sn{background:var(--blue);color:#fff}
+.step.done .sn{background:rgba(255,255,255,.18);color:#fff}
+.sl{font-family:'Montserrat',sans-serif;font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.3)}
+.step.active .sl{color:#fff}
+.step.done .sl{color:rgba(255,255,255,.5)}
+
+/* SCREENS */
+.screen{display:none}.screen.active{display:block}
+
+/* SECTION */
+.sec{padding:40px 2rem}
+.sec.bg-off{background:var(--off)}
+.sec.bg-navy{background:var(--navy);color:#fff}
+.sec-in{max-width:960px;margin:0 auto}
+.eye{font-family:'Montserrat',sans-serif;font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.14em;color:var(--blue);margin-bottom:8px}
+.eye.lt{color:rgba(255,255,255,.45)}
+h2{font-family:'Montserrat',sans-serif;font-weight:900;font-size:clamp(1.25rem,2.5vw,1.8rem);letter-spacing:-.025em;color:var(--tx);margin-bottom:.3rem;line-height:1.15}
+h2.lt{color:#fff}
+.sub{font-size:12px;color:var(--tx3);max-width:520px;margin-bottom:1.8rem;line-height:1.8}
+.sub.lt{color:rgba(255,255,255,.45)}
+
+/* FORM */
+.fgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px 20px;margin-bottom:1.2rem}
+.fspan{grid-column:1/-1}
+.flbl{font-family:'Montserrat',sans-serif;font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--tx3);margin-bottom:4px;display:block}
+.flbl .req{color:var(--blue)}
+.finp,.fsel{font-family:'Open Sans',sans-serif;font-size:13px;color:var(--tx);background:#fff;border:1.5px solid var(--gr2);padding:10px 13px;outline:none;transition:border-color .18s;width:100%;-webkit-appearance:none}
+.finp:focus,.fsel:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(45,107,228,.08)}
+.fsel{cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%236b7394'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center;padding-right:32px}
+
+.copts{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
+.copt{border:1.5px solid var(--gr2);padding:12px 10px;cursor:pointer;transition:all .15s;background:#fff}
+.copt:hover{border-color:var(--blue);background:var(--bl)}
+.copt.sel{border-color:var(--blue);background:var(--bl);box-shadow:inset 0 0 0 1px var(--blue)}
+.co-t{font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;color:var(--navy);margin-bottom:2px}
+.co-s{font-size:10px;color:var(--tx3);line-height:1.4}
+
+/* PRIORITY */
+.plist{display:flex;flex-direction:column}
+.pi{background:#fff;border:1px solid var(--gr);border-top:none;padding:16px 20px;display:grid;grid-template-columns:1fr 60px;gap:12px;align-items:center}
+.pi:first-child{border-top:1px solid var(--gr)}
+.pi:hover{background:var(--off)}
+.pi-n{font-family:'Montserrat',sans-serif;font-size:12px;font-weight:700;color:var(--navy);margin-bottom:2px}
+.pi-d{font-size:10px;color:var(--tx3);margin-bottom:8px}
+.pi-sl{width:100%;height:4px;appearance:none;background:var(--gr2);outline:none;cursor:pointer;border-radius:2px}
+.pi-sl::-webkit-slider-thumb{appearance:none;width:16px;height:16px;border-radius:50%;background:#fff;border:3px solid var(--navy);box-shadow:0 1px 4px rgba(26,45,107,.2);cursor:pointer}
+.pi-sl::-moz-range-thumb{width:16px;height:16px;border-radius:50%;background:#fff;border:3px solid var(--navy);cursor:pointer}
+.pi-mm{display:flex;justify-content:space-between;margin-top:3px}
+.pi-mm span{font-size:8px;color:var(--gr3);font-family:'Montserrat',sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:.04em}
+.pi-r{text-align:center}
+.pi-v{font-family:'Montserrat',sans-serif;font-weight:900;font-size:1.6rem;color:var(--navy);line-height:1}
+.pi-p{font-family:'Montserrat',sans-serif;font-size:9px;font-weight:700;text-transform:uppercase;color:var(--blue);margin-top:2px}
+
+/* BUTTONS */
+.bn{background:var(--navy);color:#fff;font-family:'Montserrat',sans-serif;font-weight:700;font-size:11px;letter-spacing:.06em;text-transform:uppercase;padding:12px 24px;border:none;cursor:pointer;transition:background .18s;display:inline-flex;align-items:center;gap:7px}
+.bn:hover{background:var(--blue)}
+.bo{background:#fff;color:var(--navy);font-family:'Montserrat',sans-serif;font-weight:700;font-size:11px;letter-spacing:.06em;text-transform:uppercase;padding:11px 20px;border:1.5px solid var(--navy);cursor:pointer;transition:all .18s;display:inline-flex;align-items:center;gap:7px}
+.bo:hover{background:var(--navy);color:#fff}
+.bw{background:transparent;color:rgba(255,255,255,.75);font-family:'Montserrat',sans-serif;font-weight:700;font-size:11px;letter-spacing:.06em;text-transform:uppercase;padding:11px 20px;border:1.5px solid rgba(255,255,255,.3);cursor:pointer;transition:all .18s;display:inline-flex;align-items:center;gap:7px}
+.bw:hover{border-color:#fff;color:#fff}
+.brow{display:flex;gap:10px;align-items:center;margin-top:1.8rem;flex-wrap:wrap}
+.sp{flex:1}
+.ic{width:11px;height:11px;flex-shrink:0}
+
+/* INFO */
+.ibox{background:var(--bl);border-left:3px solid var(--blue);padding:12px 16px;font-size:11px;color:var(--tx2);line-height:1.8;margin-top:1.2rem}
+.ibox strong{font-family:'Montserrat',sans-serif;font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--blue);display:block;margin-bottom:3px}
+
+/* RESULTS BANNER */
+.rb{background:var(--navy);padding:32px 2rem}
+.rb-in{max-width:960px;margin:0 auto;display:grid;grid-template-columns:1fr auto;gap:2rem;align-items:end}
+.rb-e{font-family:'Montserrat',sans-serif;font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.14em;color:rgba(255,255,255,.35);margin-bottom:6px}
+.rb-n{font-family:'Montserrat',sans-serif;font-weight:900;font-size:1.5rem;color:#fff;letter-spacing:-.02em;margin-bottom:3px}
+.rb-s{font-size:12px;color:rgba(255,255,255,.4)}
+.rb-kk{display:flex;gap:20px;text-align:right}
+.rb-kv{font-family:'Montserrat',sans-serif;font-weight:900;font-size:1.4rem;color:#fff;line-height:1}
+.rb-kl{font-family:'Montserrat',sans-serif;font-size:8px;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.3);margin-top:3px}
+.rb-line{height:3px;background:linear-gradient(90deg,var(--blue) 0,rgba(45,107,228,.15) 100%)}
+
+/* PODIUM */
+.podium{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:1.5rem}
+.pc{background:#fff;border:1px solid var(--gr);padding:22px 18px;position:relative;overflow:hidden;border-top:4px solid var(--gr2)}
+.pc:hover{box-shadow:0 6px 30px rgba(26,45,107,.1)}
+.pc.p1{border-top-color:var(--navy)}.pc.p2{border-top-color:var(--blue)}.pc.p3{border-top-color:var(--bm)}
+.pc-rn{position:absolute;top:16px;right:16px;font-family:'Montserrat',sans-serif;font-weight:900;font-size:2.5rem;color:var(--gr);line-height:1}
+.pc-rl{font-family:'Montserrat',sans-serif;font-size:8px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;margin-bottom:10px}
+.p1 .pc-rl{color:var(--navy)}.p2 .pc-rl{color:var(--blue)}.p3 .pc-rl{color:var(--tx3)}
+.pc-f{font-size:1.9rem;display:block;margin-bottom:6px}
+.pc-c{font-family:'Montserrat',sans-serif;font-weight:900;font-size:1.05rem;color:var(--navy);margin-bottom:1px}
+.pc-r{font-family:'Montserrat',sans-serif;font-size:8px;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--tx3);margin-bottom:12px}
+.pc-sr{display:flex;align-items:baseline;gap:4px;padding-bottom:12px;margin-bottom:12px;border-bottom:1px solid var(--gr)}
+.pc-sc{font-family:'Montserrat',sans-serif;font-weight:900;font-size:2.2rem;line-height:1}
+.p1 .pc-sc{color:var(--navy)}.p2 .pc-sc{color:var(--blue)}.p3 .pc-sc{color:var(--tx3)}
+.pc-sd{font-size:12px;color:var(--tx3)}
+.pc-rat{font-size:11px;color:var(--tx2);line-height:1.65;margin-bottom:10px}
+.pc-tags{display:flex;flex-wrap:wrap;gap:3px}
+.pt{font-family:'Montserrat',sans-serif;font-size:8px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;padding:3px 7px}
+.pts{background:var(--gnl);color:var(--gn)}.ptr{background:var(--rel);color:var(--re)}
+
+/* TABLE */
+.tblk{background:#fff;border:1px solid var(--gr);overflow:hidden}
+.th{padding:14px 18px;border-bottom:1px solid var(--gr);display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+.th-t{font-family:'Montserrat',sans-serif;font-weight:700;font-size:12px;color:var(--navy)}
+.th-s{font-size:10px;color:var(--tx3);margin-top:1px}
+.tscroll{overflow-x:auto}
+table{width:100%;border-collapse:collapse;min-width:780px}
+thead th{font-family:'Montserrat',sans-serif;font-size:8px;font-weight:700;text-transform:uppercase;letter-spacing:.09em;color:var(--tx3);padding:9px 12px;text-align:left;background:var(--off);border-bottom:1px solid var(--gr)}
+thead th.r{text-align:right}
+tbody td{padding:11px 12px;border-bottom:1px solid var(--gr);font-size:12px;color:var(--tx)}
+tbody td.r{text-align:right;font-family:'Montserrat',sans-serif;font-size:10px;font-weight:700}
+tbody tr:last-child td{border-bottom:none}
+tbody tr:hover td{background:var(--off)}
+.rkb{width:22px;height:22px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-family:'Montserrat',sans-serif;font-size:9px;font-weight:800}
+.rk1{background:var(--navy);color:#fff}.rk2{background:var(--blue);color:#fff}.rk3{background:var(--bm);color:var(--navy)}.rkn{background:var(--gr);color:var(--tx3)}
+.cc{display:flex;align-items:center;gap:8px}
+.cf{font-size:15px}.cnm{font-family:'Montserrat',sans-serif;font-weight:700;font-size:11px;color:var(--navy)}.crg{font-size:9px;color:var(--tx3)}
+.vH{color:var(--gn)}.vM{color:var(--am)}.vL{color:var(--re)}
+.scl{display:flex;align-items:center;gap:6px;min-width:130px}
+.sb{flex:1;height:5px;background:var(--gr);overflow:hidden}
+.sf{height:100%}
+.sv{font-family:'Montserrat',sans-serif;font-weight:800;font-size:11px;min-width:30px;text-align:right}
+.cp{display:inline-flex;align-items:center;gap:3px;font-family:'Montserrat',sans-serif;font-size:8px;font-weight:700}
+.cd{width:5px;height:5px;border-radius:50%}
+.cH{background:var(--gn)}.cM{background:var(--am)}.cL{background:var(--re)}
+
+/* BREAKDOWN */
+.bdg{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.bdc{background:#fff;border:1px solid var(--gr);padding:16px}
+.bdc-l{font-family:'Montserrat',sans-serif;font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.09em;color:var(--tx3);margin-bottom:10px}
+.bdc-b{display:flex;gap:3px;align-items:flex-end;height:44px;margin-bottom:6px}
+.bdc-br{flex:1;min-width:6px}
+.bdc-sc{display:flex;gap:3px}
+.bdc-si{flex:1;text-align:center}
+.bdc-sv{font-family:'Montserrat',sans-serif;font-size:10px;font-weight:700;color:var(--navy)}
+.bdc-sf{font-size:10px;color:var(--tx3)}
+
+/* RADAR */
+.radwrap{background:#fff;border:1px solid var(--gr);display:flex;justify-content:center;padding:20px}
+
+/* METH */
+.mg{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:1.2rem}
+.mc{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);padding:16px}
+.mc-t{font-family:'Montserrat',sans-serif;font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.45);margin-bottom:6px}
+.mc-b{font-size:11px;color:rgba(255,255,255,.4);line-height:1.7}
+.stgs{display:flex;flex-wrap:wrap;gap:5px}
+.stg{font-family:'Montserrat',sans-serif;font-size:8px;font-weight:600;text-transform:uppercase;letter-spacing:.05em;padding:3px 8px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.09);color:rgba(255,255,255,.35)}
+
+/* FOOTER */
+footer{background:var(--navyd);padding:22px 2rem}
+.fi{max-width:960px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.8rem}
+.fl{font-family:'Montserrat',sans-serif;font-weight:900;font-size:.85rem;color:#fff;letter-spacing:-.01em}
+.fl span{font-weight:300;color:rgba(255,255,255,.35);font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;margin-left:6px}
+.fll{display:flex;gap:16px}
+.fll a{font-family:'Montserrat',sans-serif;font-size:9px;font-weight:600;text-transform:uppercase;letter-spacing:.09em;color:rgba(255,255,255,.3);text-decoration:none}
+.fll a:hover{color:rgba(255,255,255,.65)}
+.fc{font-size:10px;color:rgba(255,255,255,.2);font-family:'Montserrat',sans-serif}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+.fu{animation:fadeUp .38s ease forwards}
+.d1{animation-delay:.05s;opacity:0}.d2{animation-delay:.11s;opacity:0}.d3{animation-delay:.17s;opacity:0}.d4{animation-delay:.23s;opacity:0}
+
+@media(max-width:600px){
+  .podium{grid-template-columns:1fr}.bdg{grid-template-columns:1fr}.mg{grid-template-columns:1fr}
+  .copts{grid-template-columns:1fr 1fr}.fgrid{grid-template-columns:1fr}
+  .rb-in{grid-template-columns:1fr}.rb-kk{display:none}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <a href="https://www.futuro-perfecto.eu" class="logo">
+    <div class="logo-name">FUTURO PERFECTO<span class="logo-eu">🇪🇺</span></div>
+    <div class="logo-sub">Beyond Innovation</div>
+  </a>
+  <div class="nav-tool-label">Quantum Expansion Tool</div>
+</nav>
+
+<!-- BANNER -->
+<div class="banner">
+  <p>Quantum market expansion tool — structured, data-driven country recommendations for Spanish quantum startups</p>
+</div>
+
+<!-- STEP STRIP -->
+<div class="steps">
+  <div class="step active" id="ss1"><div class="sn">1</div><div class="sl">Firm profile</div></div>
+  <div class="step" id="ss2"><div class="sn">2</div><div class="sl">Strategic priorities</div></div>
+  <div class="step" id="ss3"><div class="sn">3</div><div class="sl">Country recommendation</div></div>
+</div>
+
+<!-- SCREEN 1 -->
+<div class="screen active" id="s1">
+<div class="sec bg-off">
+<div class="sec-in">
+  <div class="fu d1">
+    <div class="eye">Step 01 — Firm profile</div>
+    <h2>Tell us about your startup</h2>
+    <p class="sub">Your profile shapes how we interpret the data and which trade-offs matter most for your situation.</p>
+  </div>
+  <div class="fgrid fu d2">
+    <div>
+      <label class="flbl">Company name <span class="req">*</span></label>
+      <input class="finp" id="fn" type="text" placeholder="e.g. QuantaSpark S.L.">
+    </div>
+    <div>
+      <label class="flbl">Founded year</label>
+      <select class="fsel" id="fy"><option value="">Select year</option><option>2024</option><option>2023</option><option>2022</option><option>2021</option><option>2020</option><option>2019</option><option>Before 2019</option></select>
+    </div>
+    <div>
+      <label class="flbl">Technology focus <span class="req">*</span></label>
+      <select class="fsel" id="ft"><option value="">Select technology</option><option>Quantum computing (hardware)</option><option>Quantum computing (software / algorithms)</option><option>Quantum sensing</option><option>Quantum communication / QKD</option><option>Quantum simulation</option><option>Quantum cryptography</option><option>Cross-domain / platform</option></select>
+    </div>
+    <div>
+      <label class="flbl">Development stage <span class="req">*</span></label>
+      <select class="fsel" id="fs"><option value="">Select stage</option><option>Pre-seed — research phase</option><option>Seed — proof of concept</option><option>Series A — first commercial pilots</option><option>Series B+ — scaling revenue</option></select>
+    </div>
+    <div>
+      <label class="flbl">Team size</label>
+      <select class="fsel" id="ftm"><option value="">Select range</option><option>1–5</option><option>6–15</option><option>16–50</option><option>51–150</option><option>150+</option></select>
+    </div>
+    <div>
+      <label class="flbl">Funding raised (€)</label>
+      <select class="fsel" id="ff"><option value="">Select range</option><option>Bootstrapped / grants only</option><option>Under €500K</option><option>€500K – €2M</option><option>€2M – €10M</option><option>Over €10M</option></select>
+    </div>
+    <div class="fspan">
+      <label class="flbl">Target customer segment</label>
+      <div class="copts" id="fc">
+        <div class="copt" onclick="pick('fc',this)"><div class="co-t">Enterprise</div><div class="co-s">Finance, pharma, defence, energy</div></div>
+        <div class="copt" onclick="pick('fc',this)"><div class="co-t">Government</div><div class="co-s">Defence, intelligence, national labs</div></div>
+        <div class="copt" onclick="pick('fc',this)"><div class="co-t">Telco / Cloud</div><div class="co-s">QKD, network security, HPC</div></div>
+        <div class="copt" onclick="pick('fc',this)"><div class="co-t">Research</div><div class="co-s">Universities, national labs</div></div>
+      </div>
+    </div>
+    <div class="fspan">
+      <label class="flbl">Primary expansion objective</label>
+      <div class="copts" id="fo">
+        <div class="copt" onclick="pick('fo',this)"><div class="co-t">Hire talent</div><div class="co-s">R&D or technical team</div></div>
+        <div class="copt" onclick="pick('fo',this)"><div class="co-t">Acquire customers</div><div class="co-s">Pilots, enterprise sales</div></div>
+        <div class="copt" onclick="pick('fo',this)"><div class="co-t">Enter ecosystem</div><div class="co-s">Partnerships, research access</div></div>
+        <div class="copt" onclick="pick('fo',this)"><div class="co-t">Regional gateway</div><div class="co-s">Springboard to broader region</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="brow fu d3"><div class="sp"></div>
+    <button class="bn" onclick="g2()">Continue to priorities <svg class="ic" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg></button>
+  </div>
+</div></div>
+</div>
+
+<!-- SCREEN 2 -->
+<div class="screen" id="s2">
+<div class="sec bg-off">
+<div class="sec-in">
+  <div class="fu d1">
+    <div class="eye">Step 02 — Strategic priorities</div>
+    <h2>Set your expansion weights</h2>
+    <p class="sub">Drag each slider to reflect how important each dimension is to your decision. Your weights determine the ranking.</p>
+  </div>
+  <div class="plist fu d2" id="pl"></div>
+  <div class="ibox fu d3"><strong>How the model works</strong>Slider values become proportional weights (w_i = x_i / Σx_i). Each criterion aggregates 4 sub-indicators normalised 0–100 from OECD, EPO, WGI, IMD, and WIPO data. A Spain-fit score (EU alignment, friction, English, distance, diversification) is added at 15% fixed weight. Final score = 0.85 × weighted base + 0.15 × Spain-fit.</div>
+  <div class="brow fu d4">
+    <button class="bo" onclick="g1()"><svg class="ic" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M13 8H3M7 12l-4-4 4-4"/></svg> Back</button>
+    <div class="sp"></div>
+    <button class="bn" onclick="g3()">Generate recommendation <svg class="ic" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg></button>
+  </div>
+</div></div>
+</div>
+
+<!-- SCREEN 3 -->
+<div class="screen" id="s3">
+
+  <div class="rb fu">
+    <div class="rb-in">
+      <div>
+        <div class="rb-e">Expansion Intelligence Report</div>
+        <div class="rb-n" id="rbn">Your Startup</div>
+        <div class="rb-s" id="rbs">Country recommendation · 9 markets · 6 criteria · 120+ data points</div>
+      </div>
+      <div class="rb-kk" id="rbk"></div>
+    </div>
+  </div>
+  <div class="rb-line"></div>
+
+  <div class="sec fu d1"><div class="sec-in">
+    <div class="eye">Top 3 recommended markets</div>
+    <div class="podium" id="podium"></div>
+  </div></div>
+
+  <div class="sec bg-off fu d2" style="padding-top:0;padding-bottom:32px"><div class="sec-in">
+    <div class="tblk">
+      <div class="th">
+        <div><div class="th-t">Full country ranking</div><div class="th-s">Weighted score · base (85%) + Spain-fit (15%)</div></div>
+        <button class="bo" style="padding:8px 14px;font-size:10px" onclick="g2()">Adjust priorities</button>
+      </div>
+      <div class="tscroll">
+        <table>
+          <thead><tr>
+            <th style="width:32px">#</th><th>Country</th>
+            <th class="r">Ecosystem</th><th class="r">Commerce</th><th class="r">Talent</th>
+            <th class="r">Market</th><th class="r">Regulation</th><th class="r">Cost</th>
+            <th class="r">Spain fit</th><th class="r" style="min-width:150px">Score</th><th class="r">Conf.</th>
+          </tr></thead>
+          <tbody id="rtb"></tbody>
+        </table>
+      </div>
+    </div>
+  </div></div>
+
+  <div class="sec fu d3"><div class="sec-in">
+    <div class="eye">Criterion breakdown</div>
+    <h2>Performance across all dimensions</h2>
+    <p class="sub" style="margin-bottom:1.2rem">Top 5 countries · normalised 0–100 per criterion</p>
+    <div class="bdg" id="bdg"></div>
+  </div></div>
+
+  <div class="sec bg-off fu d4"><div class="sec-in">
+    <div class="eye">Radar analysis</div>
+    <h2>Multidimensional profile — top 3 countries</h2>
+    <p class="sub" style="margin-bottom:1.2rem">Six-axis comparison across all scored criteria</p>
+    <div class="radwrap"><canvas id="rad" width="480" height="340"></canvas></div>
+  </div></div>
+
+  <div class="sec bg-navy"><div class="sec-in">
+    <div class="eye lt">Transparency</div>
+    <h2 class="lt">Methodology & data sources</h2>
+    <p class="sub lt" style="max-width:580px;margin-bottom:1.6rem">Country scores are not assigned impressionistically. Each country is evaluated through a structured multi-criteria model — measurable indicators normalised 0–100, aggregated into criterion scores, weighted by your strategic priorities.</p>
+    <div class="mg">
+      <div class="mc"><div class="mc-t">Normalisation</div><div class="mc-b">All indicators normalised 0–100 via min-max scaling. Cost indicators inverted — lower cost = higher score.</div></div>
+      <div class="mc"><div class="mc-t">Sub-indicator aggregation</div><div class="mc-b">Each criterion built from 4 sub-indicators with explicit weights. E.g. Ecosystem = Funding 35% + Startups 25% + Research 20% + Patents 20%.</div></div>
+      <div class="mc"><div class="mc-t">Priority weighting</div><div class="mc-b">Slider values → proportional weights (w_i = x_i / Σx_i). Confidence adjustments: H=1.0, M=0.95, L=0.90.</div></div>
+      <div class="mc"><div class="mc-t">Spain-fit adjustment</div><div class="mc-b">Final = 0.85 × base + 0.15 × SpainFit. Captures EU alignment, friction, English, geographic distance, diversification value.</div></div>
+      <div class="mc"><div class="mc-t">Confidence tiers</div><div class="mc-b">High: WGI, OECD, EPO, IMD hard data. Medium: proxy indicators. Low: analytical bands. Low discounted 10%.</div></div>
+      <div class="mc"><div class="mc-t">Analytical bands</div><div class="mc-b">90–100 = global hub · 70–89 = strong subregional · 50–69 = limited hub · &lt;50 = domestic focus.</div></div>
+    </div>
+    <div class="stgs">
+      <span class="stg">OECD Quantum Ecosystem 2023</span><span class="stg">EPO Patent Insights</span><span class="stg">World Bank WGI 2023</span><span class="stg">IMD Digital Competitiveness 2024</span><span class="stg">WIPO GII 2024</span><span class="stg">INSEAD GTCI</span><span class="stg">QS University Rankings</span><span class="stg">EF English Proficiency Index</span><span class="stg">Numbeo 2024</span><span class="stg">KPMG Tax Tables</span><span class="stg">Dealroom / Crunchbase</span><span class="stg">World Bank GDP & Trade</span>
+    </div>
+    <div class="brow" style="margin-top:1.6rem">
+      <button class="bw" onclick="g2()"><svg class="ic" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M13 8H3M7 12l-4-4 4-4"/></svg> Adjust priorities</button>
+      <button class="bw" onclick="window.print()">Export</button>
+      <div class="sp"></div>
+      <button class="bn" style="background:#fff;color:var(--navy)" onclick="rst()">New analysis</button>
+    </div>
+  </div></div>
+
+</div><!-- /s3 -->
+
+<footer>
+  <div class="fi">
+    <div class="fl">FUTURO PERFECTO 🇪🇺<span>Beyond Innovation</span></div>
+    <div class="fc">Quantum Expansion Intelligence Tool · Data: OECD · EPO · World Bank · IMD</div>
+  </div>
+</footer>
+
+<script>
+const CO=[{name:'Germany',flag:'🇩🇪',region:'Europe'},{name:'France',flag:'🇫🇷',region:'Europe'},{name:'Netherlands',flag:'🇳🇱',region:'Europe'},{name:'Switzerland',flag:'🇨🇭',region:'Europe'},{name:'United Kingdom',flag:'🇬🇧',region:'Europe'},{name:'Singapore',flag:'🇸🇬',region:'Asia'},{name:'India',flag:'🇮🇳',region:'Asia'},{name:'Japan',flag:'🇯🇵',region:'Asia'},{name:'South Korea',flag:'🇰🇷',region:'Asia'}];
+const RAW={eco:{funding:[90,85,45,60,80,70,65,75,70],startups:[82,68,52,55,75,65,45,60,55],research:[88,80,50,75,85,72,70,78,75],patents:[85,72,48,70,80,68,55,82,78],conf:['H','H','M','M','H','H','M','H','H'],w:[.35,.25,.20,.20],label:'Quantum ecosystem'},com:{imd:[78,72,80,88,76,95,55,84,82],industry:[88,75,70,72,78,80,62,82,80],pilots:[80,68,65,58,72,90,60,76,72],infra:[82,75,85,80,80,95,52,78,75],conf:['H','H','H','H','H','H','M','H','H'],w:[.30,.30,.20,.20],label:'Commercialisation'},tal:{universities:[88,78,65,80,90,72,75,80,78],stem:[85,75,60,65,82,70,78,82,80],openness:[78,72,80,88,80,92,55,68,65],english:[72,55,82,78,95,92,60,52,58],conf:['H','H','M','H','H','H','M','H','H'],w:[.30,.25,.25,.20],label:'Talent access'},mkt:{gdp:[85,78,60,60,82,68,72,88,78],gateway:[72,68,62,55,78,95,80,80,78],trade:[68,70,82,78,78,92,62,68,70],neighbors:[82,80,85,80,78,88,78,72,75],conf:['H','H','H','H','H','H','M','H','H'],w:[.30,.25,.25,.20],label:'Market expansion'},reg:{ruleoflaw:[90,82,92,97,88,92,52,88,82],regquality:[88,80,90,92,85,95,55,85,80],ip:[82,78,85,90,82,88,58,85,80],predictable:[85,75,88,90,80,88,50,82,78],conf:['H','H','H','H','H','H','M','H','H'],w:[.30,.25,.25,.20],label:'Regulatory stability'},cst:{salaries:[38,48,55,28,42,50,88,52,55],setup:[42,48,58,30,40,52,90,45,50],tax:[55,52,78,48,60,80,85,72,68],living:[40,50,58,25,45,55,88,42,48],conf:['H','H','H','H','H','H','H','H','H'],w:[.30,.25,.25,.20],label:'Cost efficiency'}};
+const CK=['eco','com','tal','mkt','reg','cst'];
+const CSUB={eco:['funding','startups','research','patents'],com:['imd','industry','pilots','infra'],tal:['universities','stem','openness','english'],mkt:['gdp','gateway','trade','neighbors'],reg:['ruleoflaw','regquality','ip','predictable'],cst:['salaries','setup','tax','living']};
+const SFD={eu:[90,90,90,72,75,30,28,25,28],english:[72,52,85,78,95,95,65,52,60],friction:[82,78,75,72,72,50,52,48,50],distance:[88,85,80,80,72,42,45,38,42],divValue:[35,42,40,40,42,88,85,80,82],w:[.30,.20,.20,.15,.15]};
+const RAT={Germany:'Europe\'s largest quantum ecosystem backed by a €2B+ national strategy. Strong industrial B2B base. Frictionless EU expansion from Spain with high regulatory clarity.',France:'Major national quantum programme (€1.8B) and elite engineering talent. EU legal alignment makes setup straightforward. Paris emerging as a leading European deep-tech hub.',Netherlands:'Exceptional regulatory environment (top IMD). High English proficiency. Delft University anchors world-class quantum research. Amsterdam as EU gateway.',Switzerland:'Global leader in IP protection. ETH Zurich among the world\'s top quantum institutions. Non-EU status adds friction but tax efficiency compensates.','United Kingdom':'Deep quantum ecosystem (National Quantum Strategy). Best English-speaking technical talent in Europe. Post-Brexit friction adds some setup complexity.',Singapore:'Asia\'s top commercialisation hub — highest digital competitiveness globally (IMD 2024). Gateway to 670M ASEAN market. Unmatched regulatory quality.',India:'Growing National Quantum Mission and large STEM talent pool at competitive cost. Strong cost efficiency. IP enforcement and regulatory predictability are risks.',Japan:'Major quantum investment and strong patent culture. High coordination cost from Spain. Strong choice for Asia-Pacific industrial clients.','South Korea':'Rapidly scaling quantum investment with high STEM intensity. Good diversification play from EU. Government programmes accelerating commercialisation.'};
+const STR={Germany:['Largest EU ecosystem','Strong B2B market','EU alignment'],France:['National quantum plan','Elite engineering','EU frictionless'],Netherlands:['Top regulation','High English','Digital infra'],Switzerland:['Best IP protection','ETH Zurich','Low tax'],'United Kingdom':['Deep ecosystem','English talent','VC market'],Singapore:['Commerce hub','ASEAN gateway','Regulation'],India:['Cost efficiency','STEM scale','Market size'],Japan:['Patent culture','Industrial clients','Asia-Pacific'],'South Korea':['R&D intensity','STEM grads','Diversification']};
+const RSK={Germany:['High salaries','Bureaucracy'],France:['Labour rigidity'],Netherlands:['Small market'],Switzerland:['Non-EU friction','High costs'],'United Kingdom':['Post-Brexit complexity'],Singapore:['High setup cost'],India:['IP gaps','Regulatory risk'],Japan:['Cultural distance'],'South Korea':['Language barrier']};
+const BC=['#1a2d6b','#2d6be4','#1a56c4','#4d8af0','#0f5a8a','#0f7a4a','#8a5c00','#9b1c1c','#5a3a8c'];
+const CM={eco:{label:'Quantum ecosystem strength',desc:'Govt. funding · startup density · research centers · EPO patents'},com:{label:'Commercialisation readiness',desc:'IMD digital ranking · industrial maturity · pilot density · HPC access'},tal:{label:'Access to talent',desc:'University rankings · STEM graduates · GTCI openness · EF English'},mkt:{label:'Market expansion potential',desc:'GDP size · regional gateway · trade openness · neighbour access'},reg:{label:'Regulatory stability',desc:'WGI rule of law · regulatory quality · WIPO IP · predictability'},cst:{label:'Cost efficiency',desc:'Tech salaries · setup costs · KPMG tax · cost of living'}};
+
+let W={eco:8,com:7,tal:6,mkt:6,reg:5,cst:4};
+let firm={};let res=[];
+
+function pick(g,el){document.querySelectorAll('#'+g+' .copt').forEach(o=>o.classList.remove('sel'));el.classList.add('sel');}
+function ac(c){const m={H:1,M:.95,L:.9};return c.map(x=>m[x]||.95).reduce((a,b)=>a+b)/c.length;}
+function cs(k,ci){return CSUB[k].reduce((s,sk,i)=>s+RAW[k].w[i]*RAW[k][sk][ci],0);}
+function sfs(ci){return['eu','english','friction','distance','divValue'].reduce((s,k,i)=>s+SFD.w[i]*SFD[k][ci],0);}
+function compute(){
+  const tw=Object.values(W).reduce((a,b)=>a+b)||1;
+  return CO.map((c,ci)=>{
+    let base=0,ca=0;const crit={};
+    CK.forEach(k=>{const w=W[k]/tw,sc=cs(k,ci),cf=ac(RAW[k].conf);base+=w*sc*cf;ca+=cf*(W[k]/tw);crit[k]=Math.round(sc);});
+    const sf=sfs(ci),final=.85*base+.15*sf;
+    return{...c,base:+(base.toFixed(1)),sf:+(sf.toFixed(1)),final:+(final.toFixed(1)),crit,conf:ca>=.97?'H':ca>=.94?'M':'L',idx:ci};
+  }).sort((a,b)=>b.final-a.final);
+}
+
+function showS(n){
+  document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
+  document.getElementById('s'+n).classList.add('active');
+  [1,2,3].forEach(i=>{const el=document.getElementById('ss'+i);el.classList.toggle('active',i===n);el.classList.toggle('done',i<n);});
+  window.scrollTo(0,0);
+}
+function g1(){showS(1);}
+function g2(){firm.name=document.getElementById('fn').value.trim()||'Your Startup';firm.tech=document.getElementById('ft').value;firm.stage=document.getElementById('fs').value;buildPL();showS(2);}
+function g3(){res=compute();render();showS(3);}
+function rst(){showS(1);}
+
+function buildPL(){
+  document.getElementById('pl').innerHTML=CK.map(k=>`
+    <div class="pi">
+      <div>
+        <div class="pi-n">${CM[k].label}</div>
+        <div class="pi-d">${CM[k].desc}</div>
+        <input type="range" class="pi-sl" min="1" max="10" step="1" value="${W[k]}" oninput="uw('${k}',+this.value)">
+        <div class="pi-mm"><span>Not critical</span><span>Very high priority</span></div>
+      </div>
+      <div class="pi-r"><div class="pi-v" id="pv${k}">${W[k]}</div><div class="pi-p" id="pp${k}">—</div></div>
+    </div>`).join('');
+  upcts();
+}
+function uw(k,v){W[k]=v;document.getElementById('pv'+k).textContent=v;upcts();}
+function upcts(){const tw=Object.values(W).reduce((a,b)=>a+b)||1;CK.forEach(k=>{const el=document.getElementById('pp'+k);if(el)el.textContent=Math.round(W[k]/tw*100)+'%';});}
+
+function render(){
+  document.getElementById('rbn').textContent=firm.name;
+  const sub=[firm.tech,firm.stage].filter(Boolean).join(' · ');
+  document.getElementById('rbs').textContent=(sub?sub+' · ':'')+'9 markets · 6 criteria · 120+ data points';
+  document.getElementById('rbk').innerHTML=`<div><div class="rb-kv">${res[0]?.final}</div><div class="rb-kl">Top score</div></div><div><div class="rb-kv">${res[0]?.name}</div><div class="rb-kl">Lead market</div></div>`;
+
+  const PL=['Lead market','Strong alternative','Strategic option'],PC=['p1','p2','p3'];
+  document.getElementById('podium').innerHTML=res.slice(0,3).map((r,i)=>`
+    <div class="pc ${PC[i]}">
+      <div class="pc-rn">${i+1}</div>
+      <div class="pc-rl">${PL[i]}</div>
+      <span class="pc-f">${r.flag}</span>
+      <div class="pc-c">${r.name}</div><div class="pc-r">${r.region}</div>
+      <div class="pc-sr"><div class="pc-sc">${r.final}</div><div class="pc-sd">/100</div></div>
+      <div class="pc-rat">${RAT[r.name]||''}</div>
+      <div class="pc-tags">
+        ${(STR[r.name]||[]).map(s=>`<span class="pt pts">${s}</span>`).join('')}
+        ${(RSK[r.name]||[]).slice(0,1).map(s=>`<span class="pt ptr">${s}</span>`).join('')}
+      </div>
+    </div>`).join('');
+
+  document.getElementById('rtb').innerHTML=res.map((r,i)=>{
+    const rc=i===0?'rk1':i===1?'rk2':i===2?'rk3':'rkn';
+    const col=BC[r.idx]||'#888';
+    return`<tr>
+      <td><span class="rkb ${rc}">${i+1}</span></td>
+      <td><div class="cc"><span class="cf">${r.flag}</span><div><div class="cnm">${r.name}</div><div class="crg">${r.region}</div></div></div></td>
+      ${CK.map(k=>{const v=r.crit[k];return`<td class="r"><span class="${v>=75?'vH':v>=55?'vM':'vL'}">${v}</span></td>`;}).join('')}
+      <td class="r" style="color:var(--blue)">${r.sf}</td>
+      <td class="r"><div class="scl"><div class="sb"><div class="sf" style="width:${r.final}%;background:${col};height:5px"></div></div><span class="sv" style="color:${col}">${r.final}</span></div></td>
+      <td class="r"><span class="cp"><span class="cd c${r.conf}"></span>${r.conf}</span></td>
+    </tr>`;
+  }).join('');
+
+  const t5=res.slice(0,5);
+  document.getElementById('bdg').innerHTML=CK.map(k=>`
+    <div class="bdc">
+      <div class="bdc-l">${RAW[k].label}</div>
+      <div class="bdc-b">${t5.map((r,i)=>`<div class="bdc-br" style="height:${Math.max(4,Math.round(r.crit[k]/100*44))}px;background:${BC[r.idx]||'#888'};opacity:${i===0?1:.6};flex:1"></div>`).join('')}</div>
+      <div class="bdc-sc">${t5.map(r=>`<div class="bdc-si"><div class="bdc-sv">${r.crit[k]}</div><div class="bdc-sf">${r.flag}</div></div>`).join('')}</div>
+    </div>`).join('');
+
+  drawRadar();
+}
+
+function drawRadar(){
+  const cv=document.getElementById('rad');const ctx=cv.getContext('2d');
+  const W=480,H=340;cv.width=W;cv.height=H;ctx.clearRect(0,0,W,H);
+  const cx=W/2,cy=H/2+8,R=108,N=6;
+  const lbls=['Ecosystem','Commerce','Talent','Market','Regulation','Cost'];
+  const ang=lbls.map((_,i)=>Math.PI*2*i/N-Math.PI/2);
+  const t3=res.slice(0,3);
+  const strk=['rgba(26,45,107,.9)','rgba(45,107,228,.9)','rgba(26,86,196,.75)'];
+  const fl=['rgba(26,45,107,.07)','rgba(45,107,228,.07)','rgba(26,86,196,.06)'];
+  for(let r=1;r<=5;r++){ctx.beginPath();ang.forEach((a,i)=>{const rd=R*(r/5),x=cx+rd*Math.cos(a),y=cy+rd*Math.sin(a);i===0?ctx.moveTo(x,y):ctx.lineTo(x,y);});ctx.closePath();ctx.strokeStyle='rgba(26,45,107,.07)';ctx.lineWidth=1;ctx.stroke();}
+  ang.forEach(a=>{ctx.beginPath();ctx.moveTo(cx,cy);ctx.lineTo(cx+R*Math.cos(a),cy+R*Math.sin(a));ctx.strokeStyle='rgba(26,45,107,.09)';ctx.lineWidth=1;ctx.stroke();});
+  t3.forEach((co,si)=>{
+    const vals=CK.map(k=>co.crit[k]/100);
+    ctx.beginPath();vals.forEach((v,i)=>{const rd=R*v,x=cx+rd*Math.cos(ang[i]),y=cy+rd*Math.sin(ang[i]);i===0?ctx.moveTo(x,y):ctx.lineTo(x,y);});
+    ctx.closePath();ctx.fillStyle=fl[si];ctx.fill();ctx.strokeStyle=strk[si];ctx.lineWidth=2;ctx.stroke();
+    vals.forEach((v,i)=>{const rd=R*v,x=cx+rd*Math.cos(ang[i]),y=cy+rd*Math.sin(ang[i]);ctx.beginPath();ctx.arc(x,y,3,0,Math.PI*2);ctx.fillStyle=strk[si];ctx.fill();});
+  });
+  ctx.font='600 10px Montserrat,sans-serif';ctx.fillStyle='#6b7394';ctx.textAlign='center';ctx.textBaseline='middle';
+  ang.forEach((a,i)=>{const rd=R+24,x=cx+rd*Math.cos(a),y=cy+rd*Math.sin(a);ctx.fillText(lbls[i],x,y);});
+  t3.forEach((r,i)=>{const lx=16+i*158,ly=H-20;ctx.fillStyle=strk[i].replace('.9','1').replace('.75','1');ctx.fillRect(lx,ly,9,9);ctx.font='500 10px Open Sans,sans-serif';ctx.fillStyle='#6b7394';ctx.textAlign='left';ctx.fillText(`${r.flag} ${r.name} (${r.final})`,lx+13,ly+4);});
+}
+
+buildPL();
+</script>
+</body>
+</html>
