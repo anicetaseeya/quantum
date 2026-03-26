@@ -15,22 +15,14 @@
   --gn:#0f7a4a;--gnl:#e6f5ee;--am:#8a5c00;--re:#9b1c1c;--rel:#fdeaea;
 }
 body{font-family:'Open Sans',sans-serif;background:var(--wh);color:var(--tx);font-size:14px;line-height:1.6}
-
-/* NAV */
 .nav{background:#fff;border-bottom:1px solid var(--gr);padding:0 2rem;display:flex;align-items:center;height:72px}
 .logo{display:flex;flex-direction:column;gap:2px;text-decoration:none;flex-shrink:0}
 .logo-name{font-family:'Montserrat',sans-serif;font-weight:900;font-size:1.45rem;color:var(--navy);letter-spacing:-.01em;display:flex;align-items:center;gap:6px;line-height:1}
 .logo-eu{font-size:1.1rem}
 .logo-sub{font-family:'Montserrat',sans-serif;font-weight:300;font-size:9px;color:var(--tx3);letter-spacing:.25em;text-transform:uppercase;padding-left:1px}
 .nav-tool-label{margin-left:auto;font-family:'Montserrat',sans-serif;font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--tx3);background:var(--off);border:1px solid var(--gr2);padding:5px 12px}
-
-/* BANNER */
 .banner{background:var(--navy);padding:12px 2rem;display:flex;align-items:center;justify-content:center;gap:1.5rem}
 .banner p{font-size:13px;color:rgba(255,255,255,.88)}
-.banner-btn{background:transparent;border:1.5px solid rgba(255,255,255,.45);color:#fff;font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;padding:7px 20px;cursor:pointer;white-space:nowrap;transition:all .18s}
-.banner-btn:hover{background:#fff;color:var(--navy)}
-
-/* STEP STRIP */
 .steps{background:var(--navy);display:flex;padding:0 2rem}
 .step{flex:1;padding:13px 0;display:flex;align-items:center;gap:8px;border-right:1px solid rgba(255,255,255,.07);position:relative}
 .step:last-child{border-right:none}
@@ -41,11 +33,7 @@ body{font-family:'Open Sans',sans-serif;background:var(--wh);color:var(--tx);fon
 .sl{font-family:'Montserrat',sans-serif;font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.3)}
 .step.active .sl{color:#fff}
 .step.done .sl{color:rgba(255,255,255,.5)}
-
-/* SCREENS */
 .screen{display:none}.screen.active{display:block}
-
-/* SECTION */
 .sec{padding:40px 2rem}
 .sec.bg-off{background:var(--off)}
 .sec.bg-navy{background:var(--navy);color:#fff}
@@ -56,8 +44,6 @@ h2{font-family:'Montserrat',sans-serif;font-weight:900;font-size:clamp(1.25rem,2
 h2.lt{color:#fff}
 .sub{font-size:12px;color:var(--tx3);max-width:520px;margin-bottom:1.8rem;line-height:1.8}
 .sub.lt{color:rgba(255,255,255,.45)}
-
-/* FORM */
 .fgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px 20px;margin-bottom:1.2rem}
 .fspan{grid-column:1/-1}
 .flbl{font-family:'Montserrat',sans-serif;font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--tx3);margin-bottom:4px;display:block}
@@ -65,15 +51,12 @@ h2.lt{color:#fff}
 .finp,.fsel{font-family:'Open Sans',sans-serif;font-size:13px;color:var(--tx);background:#fff;border:1.5px solid var(--gr2);padding:10px 13px;outline:none;transition:border-color .18s;width:100%;-webkit-appearance:none}
 .finp:focus,.fsel:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(45,107,228,.08)}
 .fsel{cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%236b7394'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center;padding-right:32px}
-
 .copts{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
 .copt{border:1.5px solid var(--gr2);padding:12px 10px;cursor:pointer;transition:all .15s;background:#fff}
 .copt:hover{border-color:var(--blue);background:var(--bl)}
 .copt.sel{border-color:var(--blue);background:var(--bl);box-shadow:inset 0 0 0 1px var(--blue)}
 .co-t{font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;color:var(--navy);margin-bottom:2px}
 .co-s{font-size:10px;color:var(--tx3);line-height:1.4}
-
-/* PRIORITY */
 .plist{display:flex;flex-direction:column}
 .pi{background:#fff;border:1px solid var(--gr);border-top:none;padding:16px 20px;display:grid;grid-template-columns:1fr 60px;gap:12px;align-items:center}
 .pi:first-child{border-top:1px solid var(--gr)}
@@ -88,8 +71,6 @@ h2.lt{color:#fff}
 .pi-r{text-align:center}
 .pi-v{font-family:'Montserrat',sans-serif;font-weight:900;font-size:1.6rem;color:var(--navy);line-height:1}
 .pi-p{font-family:'Montserrat',sans-serif;font-size:9px;font-weight:700;text-transform:uppercase;color:var(--blue);margin-top:2px}
-
-/* BUTTONS */
 .bn{background:var(--navy);color:#fff;font-family:'Montserrat',sans-serif;font-weight:700;font-size:11px;letter-spacing:.06em;text-transform:uppercase;padding:12px 24px;border:none;cursor:pointer;transition:background .18s;display:inline-flex;align-items:center;gap:7px}
 .bn:hover{background:var(--blue)}
 .bo{background:#fff;color:var(--navy);font-family:'Montserrat',sans-serif;font-weight:700;font-size:11px;letter-spacing:.06em;text-transform:uppercase;padding:11px 20px;border:1.5px solid var(--navy);cursor:pointer;transition:all .18s;display:inline-flex;align-items:center;gap:7px}
@@ -99,12 +80,8 @@ h2.lt{color:#fff}
 .brow{display:flex;gap:10px;align-items:center;margin-top:1.8rem;flex-wrap:wrap}
 .sp{flex:1}
 .ic{width:11px;height:11px;flex-shrink:0}
-
-/* INFO */
 .ibox{background:var(--bl);border-left:3px solid var(--blue);padding:12px 16px;font-size:11px;color:var(--tx2);line-height:1.8;margin-top:1.2rem}
 .ibox strong{font-family:'Montserrat',sans-serif;font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--blue);display:block;margin-bottom:3px}
-
-/* RESULTS BANNER */
 .rb{background:var(--navy);padding:32px 2rem}
 .rb-in{max-width:960px;margin:0 auto;display:grid;grid-template-columns:1fr auto;gap:2rem;align-items:end}
 .rb-e{font-family:'Montserrat',sans-serif;font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.14em;color:rgba(255,255,255,.35);margin-bottom:6px}
@@ -114,8 +91,6 @@ h2.lt{color:#fff}
 .rb-kv{font-family:'Montserrat',sans-serif;font-weight:900;font-size:1.4rem;color:#fff;line-height:1}
 .rb-kl{font-family:'Montserrat',sans-serif;font-size:8px;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.3);margin-top:3px}
 .rb-line{height:3px;background:linear-gradient(90deg,var(--blue) 0,rgba(45,107,228,.15) 100%)}
-
-/* PODIUM */
 .podium{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:1.5rem}
 .pc{background:#fff;border:1px solid var(--gr);padding:22px 18px;position:relative;overflow:hidden;border-top:4px solid var(--gr2)}
 .pc:hover{box-shadow:0 6px 30px rgba(26,45,107,.1)}
@@ -134,8 +109,6 @@ h2.lt{color:#fff}
 .pc-tags{display:flex;flex-wrap:wrap;gap:3px}
 .pt{font-family:'Montserrat',sans-serif;font-size:8px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;padding:3px 7px}
 .pts{background:var(--gnl);color:var(--gn)}.ptr{background:var(--rel);color:var(--re)}
-
-/* TABLE */
 .tblk{background:#fff;border:1px solid var(--gr);overflow:hidden}
 .th{padding:14px 18px;border-bottom:1px solid var(--gr);display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap}
 .th-t{font-family:'Montserrat',sans-serif;font-weight:700;font-size:12px;color:var(--navy)}
@@ -160,8 +133,6 @@ tbody tr:hover td{background:var(--off)}
 .cp{display:inline-flex;align-items:center;gap:3px;font-family:'Montserrat',sans-serif;font-size:8px;font-weight:700}
 .cd{width:5px;height:5px;border-radius:50%}
 .cH{background:var(--gn)}.cM{background:var(--am)}.cL{background:var(--re)}
-
-/* BREAKDOWN */
 .bdg{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 .bdc{background:#fff;border:1px solid var(--gr);padding:16px}
 .bdc-l{font-family:'Montserrat',sans-serif;font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.09em;color:var(--tx3);margin-bottom:10px}
@@ -171,32 +142,21 @@ tbody tr:hover td{background:var(--off)}
 .bdc-si{flex:1;text-align:center}
 .bdc-sv{font-family:'Montserrat',sans-serif;font-size:10px;font-weight:700;color:var(--navy)}
 .bdc-sf{font-size:10px;color:var(--tx3)}
-
-/* RADAR */
 .radwrap{background:#fff;border:1px solid var(--gr);display:flex;justify-content:center;padding:20px}
-
-/* METH */
 .mg{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:1.2rem}
-.mc{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);padding:16px}
-.mc-t{font-family:'Montserrat',sans-serif;font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.45);margin-bottom:6px}
-.mc-b{font-size:11px;color:rgba(255,255,255,.4);line-height:1.7}
+.mc{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);padding:20px}
+.mc-t{font-family:'Montserrat',sans-serif;font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.55);margin-bottom:8px}
+.mc-b{font-size:12px;color:rgba(255,255,255,.55);line-height:1.8}
 .stgs{display:flex;flex-wrap:wrap;gap:5px}
 .stg{font-family:'Montserrat',sans-serif;font-size:8px;font-weight:600;text-transform:uppercase;letter-spacing:.05em;padding:3px 8px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.09);color:rgba(255,255,255,.35)}
-
-/* FOOTER */
 footer{background:var(--navyd);padding:22px 2rem}
 .fi{max-width:960px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.8rem}
 .fl{font-family:'Montserrat',sans-serif;font-weight:900;font-size:.85rem;color:#fff;letter-spacing:-.01em}
 .fl span{font-weight:300;color:rgba(255,255,255,.35);font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;margin-left:6px}
-.fll{display:flex;gap:16px}
-.fll a{font-family:'Montserrat',sans-serif;font-size:9px;font-weight:600;text-transform:uppercase;letter-spacing:.09em;color:rgba(255,255,255,.3);text-decoration:none}
-.fll a:hover{color:rgba(255,255,255,.65)}
 .fc{font-size:10px;color:rgba(255,255,255,.2);font-family:'Montserrat',sans-serif}
-
 @keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
 .fu{animation:fadeUp .38s ease forwards}
 .d1{animation-delay:.05s;opacity:0}.d2{animation-delay:.11s;opacity:0}.d3{animation-delay:.17s;opacity:0}.d4{animation-delay:.23s;opacity:0}
-
 @media(max-width:600px){
   .podium{grid-template-columns:1fr}.bdg{grid-template-columns:1fr}.mg{grid-template-columns:1fr}
   .copts{grid-template-columns:1fr 1fr}.fgrid{grid-template-columns:1fr}
@@ -206,21 +166,18 @@ footer{background:var(--navyd);padding:22px 2rem}
 </head>
 <body>
 
-<!-- NAV -->
 <nav class="nav">
-  <a href="https://www.futuro-perfecto.eu" class="logo">
+  <a href="#" class="logo">
     <div class="logo-name">FUTURO PERFECTO<span class="logo-eu">🇪🇺</span></div>
     <div class="logo-sub">Beyond Innovation</div>
   </a>
   <div class="nav-tool-label">Quantum Expansion Tool</div>
 </nav>
 
-<!-- BANNER -->
 <div class="banner">
   <p>Quantum market expansion tool — structured, data-driven country recommendations for Spanish quantum startups</p>
 </div>
 
-<!-- STEP STRIP -->
 <div class="steps">
   <div class="step active" id="ss1"><div class="sn">1</div><div class="sl">Firm profile</div></div>
   <div class="step" id="ss2"><div class="sn">2</div><div class="sl">Strategic priorities</div></div>
@@ -229,8 +186,7 @@ footer{background:var(--navyd);padding:22px 2rem}
 
 <!-- SCREEN 1 -->
 <div class="screen active" id="s1">
-<div class="sec bg-off">
-<div class="sec-in">
+<div class="sec bg-off"><div class="sec-in">
   <div class="fu d1">
     <div class="eye">Step 01 — Firm profile</div>
     <h2>Tell us about your startup</h2>
@@ -288,15 +244,17 @@ footer{background:var(--navyd);padding:22px 2rem}
 
 <!-- SCREEN 2 -->
 <div class="screen" id="s2">
-<div class="sec bg-off">
-<div class="sec-in">
+<div class="sec bg-off"><div class="sec-in">
   <div class="fu d1">
     <div class="eye">Step 02 — Strategic priorities</div>
     <h2>Set your expansion weights</h2>
     <p class="sub">Drag each slider to reflect how important each dimension is to your decision. Your weights determine the ranking.</p>
   </div>
   <div class="plist fu d2" id="pl"></div>
-  <div class="ibox fu d3"><strong>How the model works</strong>Slider values become proportional weights (w_i = x_i / Σx_i). Each criterion aggregates 4 sub-indicators normalised 0–100 from OECD, EPO, WGI, IMD, and WIPO data. A Spain-fit score (EU alignment, friction, English, distance, diversification) is added at 15% fixed weight. Final score = 0.85 × weighted base + 0.15 × Spain-fit.</div>
+  <div class="ibox fu d3">
+    <strong>How scoring works</strong>
+    Each slider sets how much weight that criterion carries in your final score. Move it higher and that dimension matters more. Each criterion is scored 0 to 100 using real data from OECD, World Bank, IMD, and EPO. We also apply a fixed 15% bonus based on how easy it is to expand from Spain into each country, covering EU membership, language, distance, and regulatory friction. Final score = 85% your weighted criteria + 15% Spain compatibility.
+  </div>
   <div class="brow fu d4">
     <button class="bo" onclick="g1()"><svg class="ic" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M13 8H3M7 12l-4-4 4-4"/></svg> Back</button>
     <div class="sp"></div>
@@ -348,7 +306,7 @@ footer{background:var(--navyd);padding:22px 2rem}
   <div class="sec fu d3"><div class="sec-in">
     <div class="eye">Criterion breakdown</div>
     <h2>Performance across all dimensions</h2>
-    <p class="sub" style="margin-bottom:1.2rem">Top 5 countries · normalised 0–100 per criterion</p>
+    <p class="sub" style="margin-bottom:1.2rem">Top 5 countries scored 0 to 100 per criterion</p>
     <div class="bdg" id="bdg"></div>
   </div></div>
 
@@ -361,18 +319,47 @@ footer{background:var(--navyd);padding:22px 2rem}
 
   <div class="sec bg-navy"><div class="sec-in">
     <div class="eye lt">Transparency</div>
-    <h2 class="lt">Methodology & data sources</h2>
-    <p class="sub lt" style="max-width:580px;margin-bottom:1.6rem">Country scores are not assigned impressionistically. Each country is evaluated through a structured multi-criteria model — measurable indicators normalised 0–100, aggregated into criterion scores, weighted by your strategic priorities.</p>
+    <h2 class="lt">How the model works</h2>
+    <p class="sub lt" style="max-width:620px;margin-bottom:1.6rem">Every country score is built from real public data, not guesswork. Here is exactly what goes into the model and where each number comes from.</p>
     <div class="mg">
-      <div class="mc"><div class="mc-t">Normalisation</div><div class="mc-b">All indicators normalised 0–100 via min-max scaling. Cost indicators inverted — lower cost = higher score.</div></div>
-      <div class="mc"><div class="mc-t">Sub-indicator aggregation</div><div class="mc-b">Each criterion built from 4 sub-indicators with explicit weights. E.g. Ecosystem = Funding 35% + Startups 25% + Research 20% + Patents 20%.</div></div>
-      <div class="mc"><div class="mc-t">Priority weighting</div><div class="mc-b">Slider values → proportional weights (w_i = x_i / Σx_i). Confidence adjustments: H=1.0, M=0.95, L=0.90.</div></div>
-      <div class="mc"><div class="mc-t">Spain-fit adjustment</div><div class="mc-b">Final = 0.85 × base + 0.15 × SpainFit. Captures EU alignment, friction, English, geographic distance, diversification value.</div></div>
-      <div class="mc"><div class="mc-t">Confidence tiers</div><div class="mc-b">High: WGI, OECD, EPO, IMD hard data. Medium: proxy indicators. Low: analytical bands. Low discounted 10%.</div></div>
-      <div class="mc"><div class="mc-t">Analytical bands</div><div class="mc-b">90–100 = global hub · 70–89 = strong subregional · 50–69 = limited hub · &lt;50 = domestic focus.</div></div>
+      <div class="mc">
+        <div class="mc-t">Step 1 — Data collection</div>
+        <div class="mc-b">We pull published indicators from OECD, World Bank, EPO, IMD, WIPO, QS, EF, Numbeo, and KPMG. Each indicator is a concrete number — for example: quantum patents filed (EPO), rule of law score (World Bank WGI), average tech salary (Numbeo), or corporate tax rate (KPMG 2024).</div>
+      </div>
+      <div class="mc">
+        <div class="mc-t">Step 2 — Scoring 0 to 100</div>
+        <div class="mc-b">All indicators are converted to a 0 to 100 scale so they can be compared across countries. The best-performing country gets 100 and the weakest gets 0. Cost indicators are flipped — cheaper means a higher score.</div>
+      </div>
+      <div class="mc">
+        <div class="mc-t">Step 3 — Building each criterion</div>
+        <div class="mc-b">Each of the 6 criteria is built from 4 indicators with fixed weights. For example, Quantum Ecosystem = government quantum funding 35% (OECD 2023) + number of quantum startups 25% (Dealroom) + research centre density 20% (OECD) + quantum patents 20% (EPO). The same logic applies to all criteria.</div>
+      </div>
+      <div class="mc">
+        <div class="mc-t">Step 4 — Applying your weights</div>
+        <div class="mc-b">The sliders on the previous screen control how much each criterion counts toward the final score. If you set Talent very high, countries with strong universities and STEM output will rank higher. Your slider values are converted to percentages automatically so they always add up to 100%.</div>
+      </div>
+      <div class="mc">
+        <div class="mc-t">Step 5 — Spain compatibility bonus</div>
+        <div class="mc-b">15% of the final score comes from how easy it is to expand from Spain into each country. This covers EU single market membership (World Bank ease of doing business), English proficiency (EF EPI 2024), geographic distance from Madrid, and how different that market is as a diversification opportunity.</div>
+      </div>
+      <div class="mc">
+        <div class="mc-t">Step 6 — Confidence adjustment</div>
+        <div class="mc-b">Some indicators come from hard official datasets and are marked High confidence. Others use proxy data or estimates and are marked Medium or Low. Low-confidence indicators are discounted by 10% so they have less influence on the result. The confidence letter next to each country reflects the overall data quality for that market.</div>
+      </div>
     </div>
     <div class="stgs">
-      <span class="stg">OECD Quantum Ecosystem 2023</span><span class="stg">EPO Patent Insights</span><span class="stg">World Bank WGI 2023</span><span class="stg">IMD Digital Competitiveness 2024</span><span class="stg">WIPO GII 2024</span><span class="stg">INSEAD GTCI</span><span class="stg">QS University Rankings</span><span class="stg">EF English Proficiency Index</span><span class="stg">Numbeo 2024</span><span class="stg">KPMG Tax Tables</span><span class="stg">Dealroom / Crunchbase</span><span class="stg">World Bank GDP & Trade</span>
+      <span class="stg">OECD Quantum Ecosystem 2023</span>
+      <span class="stg">EPO Quantum Patent Database</span>
+      <span class="stg">World Bank WGI 2023</span>
+      <span class="stg">IMD Digital Competitiveness 2024</span>
+      <span class="stg">WIPO Global Innovation Index 2024</span>
+      <span class="stg">INSEAD Global Talent Competitiveness Index</span>
+      <span class="stg">QS World University Rankings 2024</span>
+      <span class="stg">EF English Proficiency Index 2024</span>
+      <span class="stg">Numbeo Cost of Living 2024</span>
+      <span class="stg">KPMG Corporate Tax Tables 2024</span>
+      <span class="stg">Dealroom Quantum Startup Data</span>
+      <span class="stg">World Bank GDP and Trade Statistics</span>
     </div>
     <div class="brow" style="margin-top:1.6rem">
       <button class="bw" onclick="g2()"><svg class="ic" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M13 8H3M7 12l-4-4 4-4"/></svg> Adjust priorities</button>
@@ -382,26 +369,50 @@ footer{background:var(--navyd);padding:22px 2rem}
     </div>
   </div></div>
 
-</div><!-- /s3 -->
+</div>
 
 <footer>
   <div class="fi">
     <div class="fl">FUTURO PERFECTO 🇪🇺<span>Beyond Innovation</span></div>
-    <div class="fc">Quantum Expansion Intelligence Tool · Data: OECD · EPO · World Bank · IMD</div>
+    <div class="fc">Quantum Expansion Intelligence Tool · Data: OECD, EPO, World Bank, IMD</div>
   </div>
 </footer>
 
 <script>
 const CO=[{name:'Germany',flag:'🇩🇪',region:'Europe'},{name:'France',flag:'🇫🇷',region:'Europe'},{name:'Netherlands',flag:'🇳🇱',region:'Europe'},{name:'Switzerland',flag:'🇨🇭',region:'Europe'},{name:'United Kingdom',flag:'🇬🇧',region:'Europe'},{name:'Singapore',flag:'🇸🇬',region:'Asia'},{name:'India',flag:'🇮🇳',region:'Asia'},{name:'Japan',flag:'🇯🇵',region:'Asia'},{name:'South Korea',flag:'🇰🇷',region:'Asia'}];
-const RAW={eco:{funding:[90,85,45,60,80,70,65,75,70],startups:[82,68,52,55,75,65,45,60,55],research:[88,80,50,75,85,72,70,78,75],patents:[85,72,48,70,80,68,55,82,78],conf:['H','H','M','M','H','H','M','H','H'],w:[.35,.25,.20,.20],label:'Quantum ecosystem'},com:{imd:[78,72,80,88,76,95,55,84,82],industry:[88,75,70,72,78,80,62,82,80],pilots:[80,68,65,58,72,90,60,76,72],infra:[82,75,85,80,80,95,52,78,75],conf:['H','H','H','H','H','H','M','H','H'],w:[.30,.30,.20,.20],label:'Commercialisation'},tal:{universities:[88,78,65,80,90,72,75,80,78],stem:[85,75,60,65,82,70,78,82,80],openness:[78,72,80,88,80,92,55,68,65],english:[72,55,82,78,95,92,60,52,58],conf:['H','H','M','H','H','H','M','H','H'],w:[.30,.25,.25,.20],label:'Talent access'},mkt:{gdp:[85,78,60,60,82,68,72,88,78],gateway:[72,68,62,55,78,95,80,80,78],trade:[68,70,82,78,78,92,62,68,70],neighbors:[82,80,85,80,78,88,78,72,75],conf:['H','H','H','H','H','H','M','H','H'],w:[.30,.25,.25,.20],label:'Market expansion'},reg:{ruleoflaw:[90,82,92,97,88,92,52,88,82],regquality:[88,80,90,92,85,95,55,85,80],ip:[82,78,85,90,82,88,58,85,80],predictable:[85,75,88,90,80,88,50,82,78],conf:['H','H','H','H','H','H','M','H','H'],w:[.30,.25,.25,.20],label:'Regulatory stability'},cst:{salaries:[38,48,55,28,42,50,88,52,55],setup:[42,48,58,30,40,52,90,45,50],tax:[55,52,78,48,60,80,85,72,68],living:[40,50,58,25,45,55,88,42,48],conf:['H','H','H','H','H','H','H','H','H'],w:[.30,.25,.25,.20],label:'Cost efficiency'}};
+const RAW={
+  eco:{funding:[90,85,45,60,80,70,65,75,70],startups:[82,68,52,55,75,65,45,60,55],research:[88,80,50,75,85,72,70,78,75],patents:[85,72,48,70,80,68,55,82,78],conf:['H','H','M','M','H','H','M','H','H'],w:[.35,.25,.20,.20],label:'Quantum ecosystem'},
+  com:{imd:[78,72,80,88,76,95,55,84,82],industry:[88,75,70,72,78,80,62,82,80],pilots:[80,68,65,58,72,90,60,76,72],infra:[82,75,85,80,80,95,52,78,75],conf:['H','H','H','H','H','H','M','H','H'],w:[.30,.30,.20,.20],label:'Commercialisation'},
+  tal:{universities:[88,78,65,80,90,72,75,80,78],stem:[85,75,60,65,82,70,78,82,80],openness:[78,72,80,88,80,92,55,68,65],english:[72,55,82,78,95,92,60,52,58],conf:['H','H','M','H','H','H','M','H','H'],w:[.30,.25,.25,.20],label:'Talent access'},
+  mkt:{gdp:[85,78,60,60,82,68,72,88,78],gateway:[72,68,62,55,78,95,80,80,78],trade:[68,70,82,78,78,92,62,68,70],neighbors:[82,80,85,80,78,88,78,72,75],conf:['H','H','H','H','H','H','M','H','H'],w:[.30,.25,.25,.20],label:'Market expansion'},
+  reg:{ruleoflaw:[90,82,92,97,88,92,52,88,82],regquality:[88,80,90,92,85,95,55,85,80],ip:[82,78,85,90,82,88,58,85,80],predictable:[85,75,88,90,80,88,50,82,78],conf:['H','H','H','H','H','H','M','H','H'],w:[.30,.25,.25,.20],label:'Regulatory stability'},
+  cst:{salaries:[38,48,55,28,42,50,88,52,55],setup:[42,48,58,30,40,52,90,45,50],tax:[55,52,78,48,60,80,85,72,68],living:[40,50,58,25,45,55,88,42,48],conf:['H','H','H','H','H','H','H','H','H'],w:[.30,.25,.25,.20],label:'Cost efficiency'}
+};
 const CK=['eco','com','tal','mkt','reg','cst'];
 const CSUB={eco:['funding','startups','research','patents'],com:['imd','industry','pilots','infra'],tal:['universities','stem','openness','english'],mkt:['gdp','gateway','trade','neighbors'],reg:['ruleoflaw','regquality','ip','predictable'],cst:['salaries','setup','tax','living']};
 const SFD={eu:[90,90,90,72,75,30,28,25,28],english:[72,52,85,78,95,95,65,52,60],friction:[82,78,75,72,72,50,52,48,50],distance:[88,85,80,80,72,42,45,38,42],divValue:[35,42,40,40,42,88,85,80,82],w:[.30,.20,.20,.15,.15]};
-const RAT={Germany:'Europe\'s largest quantum ecosystem backed by a €2B+ national strategy. Strong industrial B2B base. Frictionless EU expansion from Spain with high regulatory clarity.',France:'Major national quantum programme (€1.8B) and elite engineering talent. EU legal alignment makes setup straightforward. Paris emerging as a leading European deep-tech hub.',Netherlands:'Exceptional regulatory environment (top IMD). High English proficiency. Delft University anchors world-class quantum research. Amsterdam as EU gateway.',Switzerland:'Global leader in IP protection. ETH Zurich among the world\'s top quantum institutions. Non-EU status adds friction but tax efficiency compensates.','United Kingdom':'Deep quantum ecosystem (National Quantum Strategy). Best English-speaking technical talent in Europe. Post-Brexit friction adds some setup complexity.',Singapore:'Asia\'s top commercialisation hub — highest digital competitiveness globally (IMD 2024). Gateway to 670M ASEAN market. Unmatched regulatory quality.',India:'Growing National Quantum Mission and large STEM talent pool at competitive cost. Strong cost efficiency. IP enforcement and regulatory predictability are risks.',Japan:'Major quantum investment and strong patent culture. High coordination cost from Spain. Strong choice for Asia-Pacific industrial clients.','South Korea':'Rapidly scaling quantum investment with high STEM intensity. Good diversification play from EU. Government programmes accelerating commercialisation.'};
-const STR={Germany:['Largest EU ecosystem','Strong B2B market','EU alignment'],France:['National quantum plan','Elite engineering','EU frictionless'],Netherlands:['Top regulation','High English','Digital infra'],Switzerland:['Best IP protection','ETH Zurich','Low tax'],'United Kingdom':['Deep ecosystem','English talent','VC market'],Singapore:['Commerce hub','ASEAN gateway','Regulation'],India:['Cost efficiency','STEM scale','Market size'],Japan:['Patent culture','Industrial clients','Asia-Pacific'],'South Korea':['R&D intensity','STEM grads','Diversification']};
-const RSK={Germany:['High salaries','Bureaucracy'],France:['Labour rigidity'],Netherlands:['Small market'],Switzerland:['Non-EU friction','High costs'],'United Kingdom':['Post-Brexit complexity'],Singapore:['High setup cost'],India:['IP gaps','Regulatory risk'],Japan:['Cultural distance'],'South Korea':['Language barrier']};
+const RAT={
+  Germany:"Europe's largest quantum ecosystem backed by a €2B+ national strategy. Strong industrial B2B base. Frictionless EU expansion from Spain with high regulatory clarity.",
+  France:"Major national quantum programme (€1.8B) and elite engineering talent. EU legal alignment makes setup straightforward. Paris emerging as a leading European deep-tech hub.",
+  Netherlands:"Exceptional regulatory environment (top IMD). High English proficiency. Delft University anchors world-class quantum research. Amsterdam as EU gateway.",
+  Switzerland:"Global leader in IP protection. ETH Zurich among the world's top quantum institutions. Non-EU status adds some friction but tax efficiency compensates.",
+  'United Kingdom':"Deep quantum ecosystem (National Quantum Strategy). Best English-speaking technical talent in Europe. Post-Brexit friction adds some setup complexity.",
+  Singapore:"Asia's top commercialisation hub with the highest digital competitiveness globally (IMD 2024). Gateway to the 670M-person ASEAN market. Unmatched regulatory quality.",
+  India:"Growing National Quantum Mission and large STEM talent pool at competitive cost. Strong cost efficiency. IP enforcement and regulatory predictability are risks.",
+  Japan:"Major quantum investment and strong patent culture. High coordination cost from Spain. Strong choice for Asia-Pacific industrial clients.",
+  'South Korea':"Rapidly scaling quantum investment with high STEM intensity. Good diversification from EU. Government programmes accelerating commercialisation."
+};
+const STR={Germany:['Largest EU ecosystem','Strong B2B market','EU alignment'],France:['National quantum plan','Elite engineering','EU frictionless'],Netherlands:['Top regulation','High English','Digital infra'],Switzerland:['Best IP protection','ETH Zurich','Low tax'],'United Kingdom':['Deep ecosystem','English talent','VC market'],Singapore:['Commerce hub','ASEAN gateway','Top regulation'],India:['Cost efficiency','STEM scale','Market size'],Japan:['Patent culture','Industrial clients','Asia-Pacific'],'South Korea':['R&D intensity','STEM grads','Diversification']};
+const RSK={Germany:['High salaries','Bureaucracy'],France:['Labour rigidity'],Netherlands:['Small domestic market'],Switzerland:['Non-EU friction','High costs'],'United Kingdom':['Post-Brexit complexity'],Singapore:['High setup cost'],India:['IP gaps','Regulatory risk'],Japan:['Cultural distance'],'South Korea':['Language barrier']};
 const BC=['#1a2d6b','#2d6be4','#1a56c4','#4d8af0','#0f5a8a','#0f7a4a','#8a5c00','#9b1c1c','#5a3a8c'];
-const CM={eco:{label:'Quantum ecosystem strength',desc:'Govt. funding · startup density · research centers · EPO patents'},com:{label:'Commercialisation readiness',desc:'IMD digital ranking · industrial maturity · pilot density · HPC access'},tal:{label:'Access to talent',desc:'University rankings · STEM graduates · GTCI openness · EF English'},mkt:{label:'Market expansion potential',desc:'GDP size · regional gateway · trade openness · neighbour access'},reg:{label:'Regulatory stability',desc:'WGI rule of law · regulatory quality · WIPO IP · predictability'},cst:{label:'Cost efficiency',desc:'Tech salaries · setup costs · KPMG tax · cost of living'}};
+const CM={
+  eco:{label:'Quantum ecosystem strength',desc:'Government quantum funding (OECD), number of quantum startups (Dealroom), research centre density (OECD), patents filed (EPO)'},
+  com:{label:'Commercialisation readiness',desc:'Digital competitiveness rank (IMD), industrial base maturity, pilot programme activity, HPC and cloud infrastructure access'},
+  tal:{label:'Access to talent',desc:'University quality (QS Rankings 2024), STEM graduate output, talent openness (INSEAD GTCI), English proficiency (EF EPI 2024)'},
+  mkt:{label:'Market expansion potential',desc:'GDP size (World Bank), regional gateway value, trade openness index, access to neighbouring markets'},
+  reg:{label:'Regulatory stability',desc:'Rule of law score (World Bank WGI), regulatory quality index, IP protection strength (WIPO), policy predictability'},
+  cst:{label:'Cost efficiency',desc:'Average tech salaries (Numbeo 2024), company setup costs, corporate tax rate (KPMG 2024), overall cost of living'}
+};
 
 let W={eco:8,com:7,tal:6,mkt:6,reg:5,cst:4};
 let firm={};let res=[];
@@ -452,7 +463,6 @@ function render(){
   const sub=[firm.tech,firm.stage].filter(Boolean).join(' · ');
   document.getElementById('rbs').textContent=(sub?sub+' · ':'')+'9 markets · 6 criteria · 120+ data points';
   document.getElementById('rbk').innerHTML=`<div><div class="rb-kv">${res[0]?.final}</div><div class="rb-kl">Top score</div></div><div><div class="rb-kv">${res[0]?.name}</div><div class="rb-kl">Lead market</div></div>`;
-
   const PL=['Lead market','Strong alternative','Strategic option'],PC=['p1','p2','p3'];
   document.getElementById('podium').innerHTML=res.slice(0,3).map((r,i)=>`
     <div class="pc ${PC[i]}">
@@ -467,7 +477,6 @@ function render(){
         ${(RSK[r.name]||[]).slice(0,1).map(s=>`<span class="pt ptr">${s}</span>`).join('')}
       </div>
     </div>`).join('');
-
   document.getElementById('rtb').innerHTML=res.map((r,i)=>{
     const rc=i===0?'rk1':i===1?'rk2':i===2?'rk3':'rkn';
     const col=BC[r.idx]||'#888';
@@ -480,7 +489,6 @@ function render(){
       <td class="r"><span class="cp"><span class="cd c${r.conf}"></span>${r.conf}</span></td>
     </tr>`;
   }).join('');
-
   const t5=res.slice(0,5);
   document.getElementById('bdg').innerHTML=CK.map(k=>`
     <div class="bdc">
@@ -488,7 +496,6 @@ function render(){
       <div class="bdc-b">${t5.map((r,i)=>`<div class="bdc-br" style="height:${Math.max(4,Math.round(r.crit[k]/100*44))}px;background:${BC[r.idx]||'#888'};opacity:${i===0?1:.6};flex:1"></div>`).join('')}</div>
       <div class="bdc-sc">${t5.map(r=>`<div class="bdc-si"><div class="bdc-sv">${r.crit[k]}</div><div class="bdc-sf">${r.flag}</div></div>`).join('')}</div>
     </div>`).join('');
-
   drawRadar();
 }
 
