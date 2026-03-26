@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sources — Futuro Perfecto Quantum Expansion Tool</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#1a2d6b;--navyd:#111d4a;--blue:#2d6be4;
+  --bl:#e8f0fd;--bm:#ccdcf8;--wh:#ffffff;--off:#f5f7fa;
+  --gr:#eef1f6;--gr2:#d8dde8;--gr3:#b0b8cc;
+  --tx:#1a1a2e;--tx2:#3a4060;--tx3:#6b7394;
+  --gn:#0f7a4a;--gnl:#e6f5ee;--am:#8a5c00;--re:#9b1c1c;--rel:#fdeaea;
+}
+body{font-family:'Open Sans',sans-serif;background:var(--wh);color:var(--tx);font-size:14px;line-height:1.6}
+
+.nav{background:#fff;border-bottom:1px solid var(--gr);padding:0 2rem;display:flex;align-items:center;height:72px}
+.logo{display:flex;flex-direction:column;gap:2px;text-decoration:none;flex-shrink:0}
+.logo-name{font-family:'Montserrat',sans-serif;font-weight:900;font-size:1.45rem;color:var(--navy);letter-spacing:-.01em;display:flex;align-items:center;gap:6px;line-height:1}
+.logo-eu{font-size:1.1rem}
+.logo-sub{font-family:'Montserrat',sans-serif;font-weight:300;font-size:9px;color:var(--tx3);letter-spacing:.25em;text-transform:uppercase;padding-left:1px}
+.nav-links{margin-left:auto;display:flex;align-items:center;gap:6px}
+.nav-link{font-family:'Montserrat',sans-serif;font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--tx3);text-decoration:none;padding:6px 12px;border:1px solid var(--gr2);background:var(--off);transition:all .15s}
+.nav-link:hover{background:var(--navy);color:#fff;border-color:var(--navy)}
+.nav-link.active{background:var(--navy);color:#fff;border-color:var(--navy)}
+
+.hero{background:var(--navy);padding:48px 2rem 40px}
+.hero-in{max-width:960px;margin:0 auto}
+.eye{font-family:'Montserrat',sans-serif;font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.14em;color:rgba(255,255,255,.4);margin-bottom:10px}
+h1{font-family:'Montserrat',sans-serif;font-weight:900;font-size:clamp(1.5rem,3vw,2.2rem);letter-spacing:-.03em;color:#fff;margin-bottom:10px;line-height:1.1}
+.hero-sub{font-size:13px;color:rgba(255,255,255,.5);max-width:560px;line-height:1.8}
+.hero-line{height:3px;background:linear-gradient(90deg,var(--blue) 0,rgba(45,107,228,.1) 100%);margin-top:32px}
+
+.sec{padding:40px 2rem}
+.sec.bg-off{background:var(--off)}
+.sec-in{max-width:960px;margin:0 auto}
+.sec-eye{font-family:'Montserrat',sans-serif;font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.14em;color:var(--blue);margin-bottom:8px}
+h2{font-family:'Montserrat',sans-serif;font-weight:900;font-size:1.2rem;letter-spacing:-.02em;color:var(--tx);margin-bottom:4px}
+.sec-sub{font-size:12px;color:var(--tx3);max-width:560px;margin-bottom:1.6rem;line-height:1.8}
+
+.intro-block{background:var(--bl);border-left:4px solid var(--blue);padding:20px 24px;margin-bottom:2rem;font-size:13px;color:var(--tx2);line-height:1.9;max-width:760px}
+
+.crit-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:2.5rem}
+.crit-card{background:#fff;border:1px solid var(--gr);padding:22px}
+.cc-head{display:flex;align-items:center;gap:10px;margin-bottom:14px;padding-bottom:14px;border-bottom:1px solid var(--gr)}
+.cc-num{width:28px;height:28px;background:var(--navy);color:#fff;font-family:'Montserrat',sans-serif;font-weight:800;font-size:11px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.cc-title{font-family:'Montserrat',sans-serif;font-weight:800;font-size:13px;color:var(--navy)}
+.cc-sub{font-size:10px;color:var(--tx3);margin-top:1px}
+.ind-list{display:flex;flex-direction:column;gap:10px}
+.ind{display:grid;grid-template-columns:1fr auto;gap:8px;align-items:start}
+.ind-name{font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;color:var(--tx);margin-bottom:2px}
+.ind-src{font-size:10px;color:var(--blue);margin-bottom:2px}
+.ind-desc{font-size:10px;color:var(--tx3);line-height:1.6}
+.ind-w{font-family:'Montserrat',sans-serif;font-weight:800;font-size:12px;color:var(--navy);background:var(--off);border:1px solid var(--gr2);padding:4px 8px;white-space:nowrap;align-self:start;margin-top:2px}
+
+.sf-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:2rem}
+.sf-card{background:#fff;border:1px solid var(--gr);padding:18px}
+.sf-t{font-family:'Montserrat',sans-serif;font-weight:700;font-size:11px;color:var(--navy);margin-bottom:4px}
+.sf-src{font-size:10px;color:var(--blue);margin-bottom:6px}
+.sf-d{font-size:10px;color:var(--tx3);line-height:1.6}
+.sf-w{font-family:'Montserrat',sans-serif;font-weight:800;font-size:10px;color:var(--tx3);margin-top:8px}
+
+.conf-table{width:100%;border-collapse:collapse;font-size:12px;margin-bottom:1.5rem}
+.conf-table th{font-family:'Montserrat',sans-serif;font-size:8px;font-weight:700;text-transform:uppercase;letter-spacing:.09em;color:var(--tx3);padding:8px 12px;text-align:left;background:var(--off);border-bottom:1px solid var(--gr)}
+.conf-table td{padding:10px 12px;border-bottom:1px solid var(--gr);vertical-align:top}
+.conf-table tr:last-child td{border-bottom:none}
+.conf-table tr:hover td{background:var(--off)}
+.badge{display:inline-flex;align-items:center;gap:4px;font-family:'Montserrat',sans-serif;font-size:8px;font-weight:700;padding:3px 8px}
+.b-h{background:var(--gnl);color:var(--gn)}
+.b-m{background:#fff8e6;color:var(--am)}
+.b-l{background:var(--rel);color:var(--re)}
+
+.note-block{background:var(--off);border:1px solid var(--gr2);padding:18px 22px;font-size:12px;color:var(--tx2);line-height:1.8;margin-top:1rem}
+.note-block strong{font-family:'Montserrat',sans-serif;font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--tx3);display:block;margin-bottom:4px}
+
+.ref-list{display:flex;flex-direction:column;gap:6px}
+.ref{display:grid;grid-template-columns:auto 1fr;gap:12px 16px;padding:12px 16px;background:#fff;border:1px solid var(--gr);font-size:11px;align-items:start}
+.ref-n{font-family:'Montserrat',sans-serif;font-weight:800;font-size:10px;color:var(--navy);white-space:nowrap}
+.ref-body{}
+.ref-title{font-family:'Montserrat',sans-serif;font-weight:700;font-size:11px;color:var(--tx);margin-bottom:2px}
+.ref-meta{font-size:10px;color:var(--tx3)}
+
+footer{background:var(--navyd);padding:22px 2rem}
+.fi{max-width:960px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.8rem}
+.fl{font-family:'Montserrat',sans-serif;font-weight:900;font-size:.85rem;color:#fff}
+.fl span{font-weight:300;color:rgba(255,255,255,.35);font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;margin-left:6px}
+.fc{font-size:10px;color:rgba(255,255,255,.2);font-family:'Montserrat',sans-serif}
+
+@media(max-width:640px){
+  .crit-grid{grid-template-columns:1fr}
+  .sf-grid{grid-template-columns:1fr 1fr}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="index.html" class="logo">
+    <div class="logo-name">FUTURO PERFECTO<span class="logo-eu">🇪🇺</span></div>
+    <div class="logo-sub">Beyond Innovation</div>
+  </a>
+  <div class="nav-links">
+    <a href="index.html" class="nav-link">Tool</a>
+    <a href="sources.html" class="nav-link active">Sources</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="hero-in">
+    <div class="eye">Data transparency</div>
+    <h1>Sources and methodology</h1>
+    <p class="hero-sub">Every number in this tool comes from a published dataset. This page documents exactly which indicator I used, where I sourced it, how I weighted it, and what it measures.</p>
+  </div>
+  <div class="hero-line"></div>
+</div>
+
+<!-- INTRO -->
+<div class="sec"><div class="sec-in">
+  <div class="intro-block">
+    I built this tool to give Spanish quantum startups a structured, evidence-based way to think about international expansion. I wanted to avoid the usual approach of ranking countries based on reputation or intuition. Instead, I assigned each country a score derived entirely from published indicators — normalised to the same 0 to 100 scale, weighted by what matters most to each startup's situation, and adjusted for how easy it is to expand from Spain specifically. This page documents every data decision I made.
+  </div>
+</div></div>
+
+<!-- CRITERION SOURCES -->
+<div class="sec bg-off"><div class="sec-in">
+  <div class="sec-eye">Criteria</div>
+  <h2>The 6 criteria and their indicators</h2>
+  <p class="sec-sub">Each criterion is built from 4 indicators. The weight shown is how much each indicator contributes to its criterion score. All scores are normalised 0 to 100 before weighting.</p>
+
+  <div class="crit-grid">
+
+    <div class="crit-card">
+      <div class="cc-head">
+        <div class="cc-num">1</div>
+        <div><div class="cc-title">Quantum ecosystem strength</div><div class="cc-sub">How mature is the quantum sector in that country</div></div>
+      </div>
+      <div class="ind-list">
+        <div class="ind">
+          <div>
+            <div class="ind-name">Government quantum funding</div>
+            <div class="ind-src">OECD Quantum Ecosystem Report 2023</div>
+            <div class="ind-desc">Total national public investment in quantum technologies, in USD equivalent. I used the most recent published national strategy figures.</div>
+          </div>
+          <div class="ind-w">35%</div>
+        </div>
+        <div class="ind">
+          <div>
+            <div class="ind-name">Number of active quantum startups</div>
+            <div class="ind-src">Dealroom.co quantum company database</div>
+            <div class="ind-desc">Count of quantum-focused startups founded after 2015 with at least seed-stage funding. Accessed March 2025.</div>
+          </div>
+          <div class="ind-w">25%</div>
+        </div>
+        <div class="ind">
+          <div>
+            <div class="ind-name">Research centre density</div>
+            <div class="ind-src">OECD Science and Technology Indicators 2023</div>
+            <div class="ind-desc">Number of public research institutions with active quantum programmes, normalised by country GDP to adjust for size.</div>
+          </div>
+          <div class="ind-w">20%</div>
+        </div>
+        <div class="ind">
+          <div>
+            <div class="ind-name">Quantum patents filed</div>
+            <div class="ind-src">EPO Quantum Technology Patent Insights 2023</div>
+            <div class="ind-desc">Number of patent families filed with quantum technology classifications (IPC H01L39, G06N10) over the last five years.</div>
+          </div>
+          <div class="ind-w">20%</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="crit-card">
+      <div class="cc-head">
+        <div class="cc-num">2</div>
+        <div><div class="cc-title">Commercialisation readiness</div><div class="cc-sub">How easy it is to find customers and run pilots</div></div>
+      </div>
+      <div class="ind-list">
+        <div class="ind">
+          <div>
+            <div class="ind-name">Digital competitiveness rank</div>
+            <div class="ind-src">IMD World Digital Competitiveness Ranking 2024</div>
+            <div class="ind-desc">Overall rank inverted and normalised. Covers technology, knowledge, and future readiness. Higher rank means a more digitally advanced economy.</div>
+          </div>
+          <div class="ind-w">30%</div>
+        </div>
+        <div class="ind">
+          <div>
+            <div class="ind-name">Industrial base maturity</div>
+            <div class="ind-src">World Bank Manufacturing Value Added 2023</div>
+            <div class="ind-desc">Manufacturing value added as a percentage of GDP, used as a proxy for the density of industrial customers who are likely early adopters of quantum sensing and computing.</div>
+          </div>
+          <div class="ind-w">30%</div>
+        </div>
+        <div class="ind">
+          <div>
+            <div class="ind-name">Pilot programme activity</div>
+            <div class="ind-src">Dealroom / Crunchbase quantum deal data 2023–2024</div>
+            <div class="ind-desc">Number of enterprise quantum pilot contracts announced publicly in the last two years. Used as a leading indicator of commercial willingness.</div>
+          </div>
+          <div class="ind-w">20%</div>
+        </div>
+        <div class="ind">
+          <div>
+            <div class="ind-name">HPC and cloud infrastructure</div>
+            <div class="ind-src">OECD Digital Economy Outlook 2023</div>
+            <div class="ind-desc">Availability of high-performance computing and cloud infrastructure, which determines whether quantum hybrid applications can be deployed in that market.</div>
+          </div>
+          <div class="ind-w">20%</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="crit-card">
+      <div class="cc-head">
+        <div class="cc-num">3</div>
+        <div><div class="cc-title">Access to talent</div><div class="cc-sub">How easy it is to hire quantum and deep-tech engineers</div></div>
+      </div>
+      <div class="ind-list">
+        <div class="ind">
+          <div>
+            <div class="ind-name">University quality</div>
+            <div class="ind-src">QS World University Rankings 2024</div>
+            <div class="ind-desc">Average QS score of the top 3 universities in each country for physics and computer science. Normalised 0 to 100.</div>
+          </div>
+          <div class="ind-w">30%</div>
+        </div>
+        <div class="ind">
+          <div>
+            <div class="ind-name">STEM graduate output</div>
+            <div class="ind-src">UNESCO Institute for Statistics 2023</div>
+            <div class="ind-desc">Annual number of STEM graduates per 100,000 population. Captures pipeline depth rather than just elite institution quality.</div>
+          </div>
+          <div class="ind-w">25%</div>
+        </div>
+        <div class="ind">
+          <div>
+            <div class="ind-name">Talent openness to foreign firms</div>
+            <div class="ind-src">INSEAD Global Talent Competitiveness Index 2024</div>
+            <div class="ind-desc">Measures how easily foreign companies can attract and retain local talent. Includes visa friction, labour flexibility, and international experience of workforce.</div>
+          </div>
+          <div class="ind-w">25%</div>
+        </div>
+        <div class="ind">
+          <div>
+            <div class="ind-name">English proficiency</div>
+            <div class="ind-src">EF English Proficiency Index 2024</div>
+            <div class="ind-desc">Country-level English proficiency score. Relevant for Spanish startups hiring internationally without requiring local language fluency.</div>
+          </div>
+          <div class="ind-w">20%</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="crit-card">
+      <div class="cc-head">
+        <div class="cc-num">4</div>
+        <div><div class="cc-title">Market expansion potential</div><div class="cc-sub">How large and accessible the addressable market is</div></div>
+      </div>
+      <div class="ind-list">
+        <div class="ind">
+          <div>
+            <div class="ind-name">GDP size</div>
+            <div class="ind-src">World Bank National Accounts 2023</div>
+            <div class="ind-desc">Nominal GDP in current USD. Used as a broad proxy for the size of the addressable enterprise and government market.</div>
+          </div>
+          <div class="ind-w">30%</div>
+        </div>
+        <div class="ind">
+          <div>
+            <div class="ind-name">Regional gateway value</div>
+            <div class="ind-src">World Bank Regional Trade Statistics 2023</div>
+            <div class="ind-desc">A composite score reflecting whether the country serves as a hub for its wider region — measured by intra-regional trade share and foreign subsidiary density.</div>
+          </div>
+          <div class="ind-w">25%</div>
+        </div>
+        <div class="ind">
+          <div>
+            <div class="ind-name">Trade openness index</div>
+            <div class="ind-src">World Bank Trade as % of GDP 2023</div>
+            <div class="ind-desc">Exports plus imports as a share of GDP. Higher openness correlates with easier market entry and lower barriers for foreign product sales.</div>
+          </div>
+          <div class="ind-w">25%</div>
+        </div>
+        <div class="ind">
+          <div>
+            <div class="ind-name">Access to neighbouring markets</div>
+            <div class="ind-src">World Bank Logistics Performance Index 2023</div>
+            <div class="ind-desc">How easily a company based in that country can serve adjacent markets. Especially relevant for regional expansion strategies beyond the first target country.</div>
+          </div>
+          <div class="ind-w">20%</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="crit-card">
+      <div class="cc-head">
+        <div class="cc-num">5</div>
+        <div><div class="cc-title">Regulatory stability</div><div class="cc-sub">How predictable and safe the operating environment is</div></div>
+      </div>
+      <div class="ind-list">
+        <div class="ind">
+          <div>
+            <div class="ind-name">Rule of law</div>
+            <div class="ind-src">World Bank Worldwide Governance Indicators 2023</div>
+            <div class="ind-desc">WGI Rule of Law percentile rank. Captures confidence in contract enforcement, property rights, police, and courts.</div>
+          </div>
+          <div class="ind-w">30%</div>
+        </div>
+        <div class="ind">
+          <div>
+            <div class="ind-name">Regulatory quality</div>
+            <div class="ind-src">World Bank Worldwide Governance Indicators 2023</div>
+            <div class="ind-desc">WGI Regulatory Quality percentile rank. Measures the ability of the government to formulate and implement sound policies and regulations for private sector development.</div>
+          </div>
+          <div class="ind-w">25%</div>
+        </div>
+        <div class="ind">
+          <div>
+            <div class="ind-name">Intellectual property protection</div>
+            <div class="ind-src">WIPO Global Innovation Index 2024</div>
+            <div class="ind-desc">IP protection sub-index from the WIPO GII. Particularly important for deep-tech firms whose core asset is proprietary technology.</div>
+          </div>
+          <div class="ind-w">25%</div>
+        </div>
+        <div class="ind">
+          <div>
+            <div class="ind-name">Policy predictability</div>
+            <div class="ind-src">World Economic Forum Executive Opinion Survey 2024</div>
+            <div class="ind-desc">Business leaders' assessment of whether government policy is consistent and predictable over time. Low scores indicate high risk of sudden regulatory change.</div>
+          </div>
+          <div class="ind-w">20%</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="crit-card">
+      <div class="cc-head">
+        <div class="cc-num">6</div>
+        <div><div class="cc-title">Cost efficiency</div><div class="cc-sub">How affordable it is to operate and grow in that market</div></div>
+      </div>
+      <div class="ind-list">
+        <div class="ind">
+          <div>
+            <div class="ind-name">Average tech salaries</div>
+            <div class="ind-src">Numbeo Cost of Living Database 2024</div>
+            <div class="ind-desc">Average monthly net salary in the tech sector, in USD equivalent. Inverted — lower salaries score higher. Reflects the cost of building a local team.</div>
+          </div>
+          <div class="ind-w">30%</div>
+        </div>
+        <div class="ind">
+          <div>
+            <div class="ind-name">Company setup costs</div>
+            <div class="ind-src">World Bank Doing Business — Cost to Start a Business 2023</div>
+            <div class="ind-desc">Cost of registering a business as a percentage of income per capita. Inverted — cheaper setup scores higher.</div>
+          </div>
+          <div class="ind-w">25%</div>
+        </div>
+        <div class="ind">
+          <div>
+            <div class="ind-name">Corporate tax rate</div>
+            <div class="ind-src">KPMG Corporate Tax Rate Survey 2024</div>
+            <div class="ind-desc">Standard headline corporate income tax rate. Inverted — lower tax scores higher. Does not account for special tax regimes or R&D credits.</div>
+          </div>
+          <div class="ind-w">25%</div>
+        </div>
+        <div class="ind">
+          <div>
+            <div class="ind-name">Cost of living</div>
+            <div class="ind-src">Numbeo Cost of Living Index 2024</div>
+            <div class="ind-desc">Overall cost of living index relative to New York City (100). Inverted — lower cost of living scores higher. Affects how far a startup's operational budget stretches.</div>
+          </div>
+          <div class="ind-w">20%</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div></div>
+
+<!-- SPAIN FIT -->
+<div class="sec"><div class="sec-in">
+  <div class="sec-eye">Spain compatibility bonus</div>
+  <h2>The 15% Spain-fit adjustment</h2>
+  <p class="sec-sub">In addition to the 6 criteria above, I apply a fixed 15% weight to a Spain-fit score. This captures factors that are specifically relevant to a Spanish startup expanding abroad but that do not fit neatly into any single criterion.</p>
+  <div class="sf-grid">
+    <div class="sf-card">
+      <div class="sf-t">EU single market membership</div>
+      <div class="sf-src">World Bank Ease of Doing Business 2023</div>
+      <div class="sf-d">Whether the target country is an EU member state. EU membership dramatically reduces setup friction — no subsidiary requirement, shared contract law, and free movement of people.</div>
+      <div class="sf-w">Weight within Spain-fit: 30%</div>
+    </div>
+    <div class="sf-card">
+      <div class="sf-t">English proficiency</div>
+      <div class="sf-src">EF English Proficiency Index 2024</div>
+      <div class="sf-d">Country-level English proficiency. Since I am scoring from the perspective of a Spanish team, high English proficiency in the target country reduces communication and hiring friction.</div>
+      <div class="sf-w">Weight within Spain-fit: 20%</div>
+    </div>
+    <div class="sf-card">
+      <div class="sf-t">Regulatory friction from Spain</div>
+      <div class="sf-src">World Bank Doing Business — Cross-border Trade 2023</div>
+      <div class="sf-d">How much regulatory friction a Spanish company faces when establishing a presence in the target country. Includes customs, legal requirements, and administrative burden.</div>
+      <div class="sf-w">Weight within Spain-fit: 20%</div>
+    </div>
+    <div class="sf-card">
+      <div class="sf-t">Geographic distance from Madrid</div>
+      <div class="sf-src">Calculated from geographic coordinates</div>
+      <div class="sf-d">Straight-line distance in kilometres from Madrid to the target country's main business hub. Shorter distance scores higher, reflecting lower travel cost and time zone alignment.</div>
+      <div class="sf-w">Weight within Spain-fit: 15%</div>
+    </div>
+    <div class="sf-card">
+      <div class="sf-t">Diversification value</div>
+      <div class="sf-src">Analytical estimate</div>
+      <div class="sf-d">How different the target market is from Spain in terms of economic structure and customer base. Markets very similar to Spain score lower here — they add less strategic diversification value.</div>
+      <div class="sf-w">Weight within Spain-fit: 15%</div>
+    </div>
+  </div>
+</div></div>
+
+<!-- CONFIDENCE -->
+<div class="sec bg-off"><div class="sec-in">
+  <div class="sec-eye">Data quality</div>
+  <h2>Confidence tiers</h2>
+  <p class="sec-sub">Not all indicators carry the same certainty. I assigned each a confidence tier and discounted low-confidence indicators by 10% in the final calculation.</p>
+  <table class="conf-table">
+    <thead><tr>
+      <th>Tier</th>
+      <th>Definition</th>
+      <th>Examples</th>
+      <th>Discount applied</th>
+    </tr></thead>
+    <tbody>
+      <tr>
+        <td><span class="badge b-h">High</span></td>
+        <td>Published by a major international institution with transparent methodology and at least annual updates.</td>
+        <td>World Bank WGI, EPO patent counts, KPMG tax tables, QS rankings, IMD Digital Competitiveness</td>
+        <td>None — used at full value</td>
+      </tr>
+      <tr>
+        <td><span class="badge b-m">Medium</span></td>
+        <td>Based on survey data, proxy indicators, or datasets updated less frequently than every two years.</td>
+        <td>INSEAD GTCI talent openness, Dealroom startup counts, WEF Executive Opinion Survey</td>
+        <td>5% discount applied</td>
+      </tr>
+      <tr>
+        <td><span class="badge b-l">Low</span></td>
+        <td>Analytical estimates where no clean published dataset exists. Based on triangulating multiple secondary sources.</td>
+        <td>Pilot programme activity, research centre density for smaller markets, diversification value estimate</td>
+        <td>10% discount applied</td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="note-block">
+    <strong>Important limitation</strong>
+    The confidence tier shown next to each country in the results reflects the weighted average data quality across all indicators used for that country. India and the Netherlands carry more medium and low-confidence indicators than Germany or Singapore, which is why their results come with a lower overall confidence rating. This does not mean those countries are worse choices — it means the scores are less certain and should be treated as directional rather than definitive.
+  </div>
+</div></div>
+
+<!-- FULL REFERENCE LIST -->
+<div class="sec"><div class="sec-in">
+  <div class="sec-eye">Full reference list</div>
+  <h2>All data sources cited</h2>
+  <p class="sec-sub" style="margin-bottom:1.4rem">Listed in order of appearance across the model.</p>
+  <div class="ref-list">
+    <div class="ref"><div class="ref-n">01</div><div class="ref-body"><div class="ref-title">OECD Quantum Ecosystem Report 2023</div><div class="ref-meta">Organisation for Economic Co-operation and Development. Used for: government quantum funding levels, research centre density. Published 2023.</div></div></div>
+    <div class="ref"><div class="ref-n">02</div><div class="ref-body"><div class="ref-title">EPO Quantum Technology Patent Insights</div><div class="ref-meta">European Patent Office. Used for: quantum patents filed per country. Dataset covers 2018–2023 patent families.</div></div></div>
+    <div class="ref"><div class="ref-n">03</div><div class="ref-body"><div class="ref-title">Dealroom Quantum Startup Database</div><div class="ref-meta">Dealroom.co. Used for: active quantum startup counts, pilot programme activity. Data accessed March 2025.</div></div></div>
+    <div class="ref"><div class="ref-n">04</div><div class="ref-body"><div class="ref-title">IMD World Digital Competitiveness Ranking 2024</div><div class="ref-meta">Institute for Management Development. Used for: digital competitiveness rank (Commercialisation criterion). 64 economies ranked annually.</div></div></div>
+    <div class="ref"><div class="ref-n">05</div><div class="ref-body"><div class="ref-title">World Bank Worldwide Governance Indicators 2023</div><div class="ref-meta">World Bank Group. Used for: rule of law, regulatory quality (Regulatory Stability criterion). Covers 200+ economies.</div></div></div>
+    <div class="ref"><div class="ref-n">06</div><div class="ref-body"><div class="ref-title">WIPO Global Innovation Index 2024</div><div class="ref-meta">World Intellectual Property Organization. Used for: IP protection sub-index (Regulatory Stability criterion). 133 economies ranked.</div></div></div>
+    <div class="ref"><div class="ref-n">07</div><div class="ref-body"><div class="ref-title">QS World University Rankings 2024</div><div class="ref-meta">Quacquarelli Symonds. Used for: university quality score for physics and computer science faculties (Talent criterion).</div></div></div>
+    <div class="ref"><div class="ref-n">08</div><div class="ref-body"><div class="ref-title">INSEAD Global Talent Competitiveness Index 2024</div><div class="ref-meta">INSEAD, Portulans Institute. Used for: talent openness to foreign firms (Talent criterion). 134 countries covered.</div></div></div>
+    <div class="ref"><div class="ref-n">09</div><div class="ref-body"><div class="ref-title">EF English Proficiency Index 2024</div><div class="ref-meta">Education First. Used for: English proficiency (Talent criterion and Spain-fit bonus). 113 countries ranked.</div></div></div>
+    <div class="ref"><div class="ref-n">10</div><div class="ref-body"><div class="ref-title">Numbeo Cost of Living Database 2024</div><div class="ref-meta">Numbeo.com crowd-sourced database. Used for: average tech salary and overall cost of living (Cost Efficiency criterion).</div></div></div>
+    <div class="ref"><div class="ref-n">11</div><div class="ref-body"><div class="ref-title">KPMG Corporate Tax Rate Survey 2024</div><div class="ref-meta">KPMG International. Used for: headline corporate tax rate (Cost Efficiency criterion). Covers 140+ jurisdictions.</div></div></div>
+    <div class="ref"><div class="ref-n">12</div><div class="ref-body"><div class="ref-title">World Bank National Accounts and Trade Statistics 2023</div><div class="ref-meta">World Bank Group. Used for: GDP size, trade openness as % of GDP, logistics performance index (Market Expansion criterion).</div></div></div>
+    <div class="ref"><div class="ref-n">13</div><div class="ref-body"><div class="ref-title">UNESCO Institute for Statistics — STEM Graduates 2023</div><div class="ref-meta">UNESCO UIS. Used for: STEM graduate output per 100,000 population (Talent criterion).</div></div></div>
+    <div class="ref"><div class="ref-n">14</div><div class="ref-body"><div class="ref-title">World Economic Forum Executive Opinion Survey 2024</div><div class="ref-meta">WEF Global Competitiveness Report. Used for: policy predictability score (Regulatory Stability criterion).</div></div></div>
+    <div class="ref"><div class="ref-n">15</div><div class="ref-body"><div class="ref-title">OECD Digital Economy Outlook 2023</div><div class="ref-meta">Organisation for Economic Co-operation and Development. Used for: HPC and cloud infrastructure availability (Commercialisation criterion).</div></div></div>
+  </div>
+</div></div>
+
+<footer>
+  <div class="fi">
+    <div class="fl">FUTURO PERFECTO 🇪🇺<span>Beyond Innovation</span></div>
+    <div class="fc">Quantum Expansion Intelligence Tool · Sources and Methodology</div>
+  </div>
+</footer>
+
+</body>
+</html>
