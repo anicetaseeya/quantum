@@ -157,10 +157,61 @@ footer{background:var(--navyd);padding:22px 2rem}
 @keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
 .fu{animation:fadeUp .38s ease forwards}
 .d1{animation-delay:.05s;opacity:0}.d2{animation-delay:.11s;opacity:0}.d3{animation-delay:.17s;opacity:0}.d4{animation-delay:.23s;opacity:0}
+
+/* WIZARD */
+.wiz{min-height:calc(100vh - 180px);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:40px 2rem;background:var(--off)}
+.wiz-inner{width:100%;max-width:640px}
+.wiz-prog{display:flex;align-items:center;gap:6px;margin-bottom:32px}
+.wdot{width:8px;height:8px;border-radius:50%;background:var(--gr2);transition:all .25s}
+.wdot.done{background:var(--navy)}.wdot.active{background:var(--blue);width:22px;border-radius:4px}
+.wlabel{font-family:'Montserrat',sans-serif;font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--tx3);margin-left:4px}
+.qs{display:none;animation:fadeUp .3s ease forwards}
+.qs.active{display:block}
+.qs-num{font-family:'Montserrat',sans-serif;font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--blue);margin-bottom:10px}
+.qs-q{font-family:'Montserrat',sans-serif;font-weight:900;font-size:clamp(1.2rem,2.5vw,1.6rem);color:var(--tx);letter-spacing:-.02em;margin-bottom:6px;line-height:1.2}
+.qs-hint{font-size:12px;color:var(--tx3);margin-bottom:24px;line-height:1.7}
+.wiz-inp{font-family:'Open Sans',sans-serif;font-size:16px;color:var(--tx);background:#fff;border:2px solid var(--gr2);padding:14px 16px;outline:none;transition:border-color .18s;width:100%}
+.wiz-inp:focus{border-color:var(--blue);box-shadow:0 0 0 4px rgba(45,107,228,.08)}
+.wopts{display:grid;gap:8px}
+.wopts.col2{grid-template-columns:1fr 1fr}
+.wopts.col4{grid-template-columns:1fr 1fr 1fr 1fr}
+.wopt{border:2px solid var(--gr2);padding:16px 14px;cursor:pointer;transition:all .18s;background:#fff;text-align:left;width:100%}
+.wopt:hover{border-color:var(--blue);background:var(--bl);transform:translateY(-1px)}
+.wopt.sel{border-color:var(--navy);background:var(--bl);box-shadow:inset 0 0 0 1px var(--navy)}
+.wopt-t{font-family:'Montserrat',sans-serif;font-size:12px;font-weight:800;color:var(--navy);margin-bottom:3px}
+.wopt-s{font-size:11px;color:var(--tx3);line-height:1.4}
+.wiz-nav{display:flex;align-items:center;gap:10px;margin-top:24px}
+.wskip{background:none;border:none;font-family:'Montserrat',sans-serif;font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--tx3);cursor:pointer;padding:4px 0}
+.wskip:hover{color:var(--navy)}
+.wiz-summary{background:#fff;border:1px solid var(--gr);padding:16px 20px;margin-bottom:24px;display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.ws-item{font-size:11px}.ws-l{font-family:'Montserrat',sans-serif;font-size:8px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--tx3);margin-bottom:2px}.ws-v{font-family:'Montserrat',sans-serif;font-weight:700;font-size:11px;color:var(--navy)}
+
+/* PRIORITY WIZARD */
+.pwiz{background:var(--off);min-height:calc(100vh - 180px);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:40px 2rem}
+.pwiz-inner{width:100%;max-width:640px}
+.pwiz-prog{margin-bottom:8px;height:3px;background:var(--gr2);border-radius:2px;overflow:hidden}
+.pwiz-bar{height:100%;background:var(--blue);transition:width .3s ease;border-radius:2px}
+.pwiz-label{font-family:'Montserrat',sans-serif;font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--tx3);margin-bottom:28px;display:flex;justify-content:space-between}
+.pqs{display:none;animation:fadeUp .3s ease forwards}
+.pqs.active{display:block}
+.pqs-eye{font-family:'Montserrat',sans-serif;font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--blue);margin-bottom:10px}
+.pqs-q{font-family:'Montserrat',sans-serif;font-weight:900;font-size:clamp(1.1rem,2.5vw,1.5rem);color:var(--tx);letter-spacing:-.02em;margin-bottom:6px}
+.pqs-d{font-size:12px;color:var(--tx3);margin-bottom:28px;line-height:1.7}
+.pslider-wrap{background:#fff;border:2px solid var(--gr2);padding:24px;margin-bottom:24px;transition:border-color .2s}
+.pslider-wrap:focus-within{border-color:var(--blue)}
+.psl-val{font-family:'Montserrat',sans-serif;font-weight:900;font-size:3rem;color:var(--navy);line-height:1;margin-bottom:4px}
+.psl-pct{font-family:'Montserrat',sans-serif;font-size:10px;font-weight:700;color:var(--blue);text-transform:uppercase;letter-spacing:.08em;margin-bottom:20px}
+.psl{width:100%;height:6px;appearance:none;background:var(--gr2);outline:none;cursor:pointer;border-radius:3px}
+.psl::-webkit-slider-thumb{appearance:none;width:22px;height:22px;border-radius:50%;background:#fff;border:3px solid var(--navy);box-shadow:0 2px 8px rgba(26,45,107,.25);cursor:pointer}
+.psl::-moz-range-thumb{width:22px;height:22px;border-radius:50%;background:#fff;border:3px solid var(--navy);cursor:pointer}
+.psl-mm{display:flex;justify-content:space-between;margin-top:8px}
+.psl-mm span{font-size:9px;color:var(--gr3);font-family:'Montserrat',sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:.04em}
+
 @media(max-width:600px){
   .podium{grid-template-columns:1fr}.bdg{grid-template-columns:1fr}.mg{grid-template-columns:1fr}
-  .copts{grid-template-columns:1fr 1fr}.fgrid{grid-template-columns:1fr}
+  .wopts.col4{grid-template-columns:1fr 1fr}
   .rb-in{grid-template-columns:1fr}.rb-kk{display:none}
+  .wiz-summary{grid-template-columns:1fr 1fr}
 }
 </style>
 </head>
@@ -187,83 +238,147 @@ footer{background:var(--navyd);padding:22px 2rem}
   <div class="step" id="ss3"><div class="sn">3</div><div class="sl">Country recommendation</div></div>
 </div>
 
-<!-- SCREEN 1 -->
+<!-- SCREEN 1 — WIZARD -->
 <div class="screen active" id="s1">
-<div class="sec bg-off"><div class="sec-in">
-  <div class="fu d1">
-    <div class="eye">Step 01 — Firm profile</div>
-    <h2>Tell us about your startup</h2>
-    <p class="sub">Your profile shapes how we interpret the data and which trade-offs matter most for your situation.</p>
+<div class="wiz">
+<div class="wiz-inner">
+
+  <div class="wiz-prog">
+    <div class="wdot active" id="wd1"></div>
+    <div class="wdot" id="wd2"></div>
+    <div class="wdot" id="wd3"></div>
+    <div class="wdot" id="wd4"></div>
+    <div class="wdot" id="wd5"></div>
+    <div class="wdot" id="wd6"></div>
+    <span class="wlabel" id="wlabel">Company</span>
   </div>
-  <div class="fgrid fu d2">
-    <div>
-      <label class="flbl">Company name <span class="req">*</span></label>
-      <input class="finp" id="fn" type="text" placeholder="e.g. QuantaSpark S.L.">
+
+  <!-- Q1: Name -->
+  <div class="qs active" id="wq1">
+    <div class="qs-num">01 / 06</div>
+    <div class="qs-q">What is your company name?</div>
+    <div class="qs-hint">This is used to personalise your results report.</div>
+    <input class="wiz-inp" id="fn" type="text" placeholder="e.g. QuantaSpark S.L." autocomplete="off"
+      onkeydown="if(event.key==='Enter')wNext(1)">
+    <div class="wiz-nav">
+      <button class="bn" onclick="wNext(1)">Next <svg class="ic" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg></button>
     </div>
-    <div>
-      <label class="flbl">Founded year</label>
-      <select class="fsel" id="fy"><option value="">Select year</option><option>2024</option><option>2023</option><option>2022</option><option>2021</option><option>2020</option><option>2019</option><option>Before 2019</option></select>
+  </div>
+
+  <!-- Q2: Technology focus -->
+  <div class="qs" id="wq2">
+    <div class="qs-num">02 / 06</div>
+    <div class="qs-q">What is your technology focus?</div>
+    <div class="qs-hint">Select the area that best describes your core product or platform.</div>
+    <div class="wopts col2" id="wq2opts">
+      <button class="wopt" onclick="wPick('wq2opts',this,'ft');wNext(2)"><div class="wopt-t">Quantum computing</div><div class="wopt-s">Hardware</div></button>
+      <button class="wopt" onclick="wPick('wq2opts',this,'ft');wNext(2)"><div class="wopt-t">Quantum computing</div><div class="wopt-s">Software and algorithms</div></button>
+      <button class="wopt" onclick="wPick('wq2opts',this,'ft');wNext(2)"><div class="wopt-t">Quantum sensing</div><div class="wopt-s">Precision measurement</div></button>
+      <button class="wopt" onclick="wPick('wq2opts',this,'ft');wNext(2)"><div class="wopt-t">Quantum communication</div><div class="wopt-s">QKD and secure networks</div></button>
+      <button class="wopt" onclick="wPick('wq2opts',this,'ft');wNext(2)"><div class="wopt-t">Quantum simulation</div><div class="wopt-s">Materials and chemistry</div></button>
+      <button class="wopt" onclick="wPick('wq2opts',this,'ft');wNext(2)"><div class="wopt-t">Quantum cryptography</div><div class="wopt-s">Post-quantum security</div></button>
     </div>
-    <div>
-      <label class="flbl">Technology focus <span class="req">*</span></label>
-      <select class="fsel" id="ft"><option value="">Select technology</option><option>Quantum computing (hardware)</option><option>Quantum computing (software / algorithms)</option><option>Quantum sensing</option><option>Quantum communication / QKD</option><option>Quantum simulation</option><option>Quantum cryptography</option><option>Cross-domain / platform</option></select>
+    <div class="wiz-nav">
+      <button class="bo" onclick="wBack(2)"><svg class="ic" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M13 8H3M7 12l-4-4 4-4"/></svg> Back</button>
     </div>
-    <div>
-      <label class="flbl">Development stage <span class="req">*</span></label>
-      <select class="fsel" id="fs"><option value="">Select stage</option><option>Pre-seed — research phase</option><option>Seed — proof of concept</option><option>Series A — first commercial pilots</option><option>Series B+ — scaling revenue</option></select>
+  </div>
+
+  <!-- Q3: Stage -->
+  <div class="qs" id="wq3">
+    <div class="qs-num">03 / 06</div>
+    <div class="qs-q">What is your development stage?</div>
+    <div class="qs-hint">This helps calibrate which expansion criteria matter most at your current stage.</div>
+    <div class="wopts col2" id="wq3opts">
+      <button class="wopt" onclick="wPick('wq3opts',this,'fs');wNext(3)"><div class="wopt-t">Pre-seed</div><div class="wopt-s">Still in research phase</div></button>
+      <button class="wopt" onclick="wPick('wq3opts',this,'fs');wNext(3)"><div class="wopt-t">Seed</div><div class="wopt-s">Proof of concept ready</div></button>
+      <button class="wopt" onclick="wPick('wq3opts',this,'fs');wNext(3)"><div class="wopt-t">Series A</div><div class="wopt-s">First commercial pilots</div></button>
+      <button class="wopt" onclick="wPick('wq3opts',this,'fs');wNext(3)"><div class="wopt-t">Series B+</div><div class="wopt-s">Scaling revenue</div></button>
     </div>
-    <div>
-      <label class="flbl">Team size</label>
-      <select class="fsel" id="ftm"><option value="">Select range</option><option>1–5</option><option>6–15</option><option>16–50</option><option>51–150</option><option>150+</option></select>
+    <div class="wiz-nav">
+      <button class="bo" onclick="wBack(3)"><svg class="ic" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M13 8H3M7 12l-4-4 4-4"/></svg> Back</button>
     </div>
-    <div>
-      <label class="flbl">Funding raised (€)</label>
-      <select class="fsel" id="ff"><option value="">Select range</option><option>Bootstrapped / grants only</option><option>Under €500K</option><option>€500K – €2M</option><option>€2M – €10M</option><option>Over €10M</option></select>
-    </div>
-    <div class="fspan">
-      <label class="flbl">Target customer segment</label>
-      <div class="copts" id="fc">
-        <div class="copt" onclick="pick('fc',this)"><div class="co-t">Enterprise</div><div class="co-s">Finance, pharma, defence, energy</div></div>
-        <div class="copt" onclick="pick('fc',this)"><div class="co-t">Government</div><div class="co-s">Defence, intelligence, national labs</div></div>
-        <div class="copt" onclick="pick('fc',this)"><div class="co-t">Telco / Cloud</div><div class="co-s">QKD, network security, HPC</div></div>
-        <div class="copt" onclick="pick('fc',this)"><div class="co-t">Research</div><div class="co-s">Universities, national labs</div></div>
+  </div>
+
+  <!-- Q4: Team + Funding -->
+  <div class="qs" id="wq4">
+    <div class="qs-num">04 / 06</div>
+    <div class="qs-q">Team size and funding raised?</div>
+    <div class="qs-hint">Optional — used to provide more tailored context in your report.</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:24px">
+      <div>
+        <label class="flbl" style="margin-bottom:6px;display:block">Team size</label>
+        <select class="finp" id="ftm" style="cursor:pointer">
+          <option value="">Select range</option>
+          <option>1–5</option><option>6–15</option><option>16–50</option><option>51–150</option><option>150+</option>
+        </select>
+      </div>
+      <div>
+        <label class="flbl" style="margin-bottom:6px;display:block">Funding raised (€)</label>
+        <select class="finp" id="ff" style="cursor:pointer">
+          <option value="">Select range</option>
+          <option>Bootstrapped / grants only</option><option>Under €500K</option><option>€500K – €2M</option><option>€2M – €10M</option><option>Over €10M</option>
+        </select>
       </div>
     </div>
-    <div class="fspan">
-      <label class="flbl">Primary expansion objective</label>
-      <div class="copts" id="fo">
-        <div class="copt" onclick="pick('fo',this)"><div class="co-t">Hire talent</div><div class="co-s">R&D or technical team</div></div>
-        <div class="copt" onclick="pick('fo',this)"><div class="co-t">Acquire customers</div><div class="co-s">Pilots, enterprise sales</div></div>
-        <div class="copt" onclick="pick('fo',this)"><div class="co-t">Enter ecosystem</div><div class="co-s">Partnerships, research access</div></div>
-        <div class="copt" onclick="pick('fo',this)"><div class="co-t">Regional gateway</div><div class="co-s">Springboard to broader region</div></div>
-      </div>
+    <div class="wiz-nav">
+      <button class="bo" onclick="wBack(4)"><svg class="ic" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M13 8H3M7 12l-4-4 4-4"/></svg> Back</button>
+      <button class="bn" onclick="wNext(4)">Next <svg class="ic" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg></button>
     </div>
   </div>
-  <div class="brow fu d3"><div class="sp"></div>
-    <button class="bn" onclick="g2()">Continue to priorities <svg class="ic" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg></button>
+
+  <!-- Q5: Customer segment -->
+  <div class="qs" id="wq5">
+    <div class="qs-num">05 / 06</div>
+    <div class="qs-q">Who is your primary target customer?</div>
+    <div class="qs-hint">Select the segment you are most focused on reaching in the new market.</div>
+    <div class="wopts col2" id="wq5opts">
+      <button class="wopt" onclick="wPick('wq5opts',this,'fc');wNext(5)"><div class="wopt-t">Enterprise</div><div class="wopt-s">Finance, pharma, defence, energy</div></button>
+      <button class="wopt" onclick="wPick('wq5opts',this,'fc');wNext(5)"><div class="wopt-t">Government</div><div class="wopt-s">Defence, intelligence, national labs</div></button>
+      <button class="wopt" onclick="wPick('wq5opts',this,'fc');wNext(5)"><div class="wopt-t">Telco and Cloud</div><div class="wopt-s">QKD, network security, HPC</div></button>
+      <button class="wopt" onclick="wPick('wq5opts',this,'fc');wNext(5)"><div class="wopt-t">Research</div><div class="wopt-s">Universities and national labs</div></button>
+    </div>
+    <div class="wiz-nav">
+      <button class="bo" onclick="wBack(5)"><svg class="ic" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M13 8H3M7 12l-4-4 4-4"/></svg> Back</button>
+    </div>
   </div>
-</div></div>
+
+  <!-- Q6: Objective -->
+  <div class="qs" id="wq6">
+    <div class="qs-num">06 / 06</div>
+    <div class="qs-q">What is your main expansion goal?</div>
+    <div class="qs-hint">This is the primary reason you are expanding internationally right now.</div>
+    <div class="wopts col2" id="wq6opts">
+      <button class="wopt" onclick="wPick('wq6opts',this,'fo');wFinish()"><div class="wopt-t">Hire talent</div><div class="wopt-s">Build an R&D or technical team</div></button>
+      <button class="wopt" onclick="wPick('wq6opts',this,'fo');wFinish()"><div class="wopt-t">Acquire customers</div><div class="wopt-s">Pilots and enterprise sales</div></button>
+      <button class="wopt" onclick="wPick('wq6opts',this,'fo');wFinish()"><div class="wopt-t">Enter ecosystem</div><div class="wopt-s">Partnerships and research access</div></button>
+      <button class="wopt" onclick="wPick('wq6opts',this,'fo');wFinish()"><div class="wopt-t">Regional gateway</div><div class="wopt-s">Springboard to a broader region</div></button>
+    </div>
+    <div class="wiz-nav">
+      <button class="bo" onclick="wBack(6)"><svg class="ic" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M13 8H3M7 12l-4-4 4-4"/></svg> Back</button>
+    </div>
+  </div>
+
+</div>
+</div>
 </div>
 
-<!-- SCREEN 2 -->
+<!-- SCREEN 2 — PRIORITY WIZARD -->
 <div class="screen" id="s2">
-<div class="sec bg-off"><div class="sec-in">
-  <div class="fu d1">
-    <div class="eye">Step 02 — Strategic priorities</div>
-    <h2>Set your expansion weights</h2>
-    <p class="sub">Drag each slider to reflect how important each dimension is to your decision. Your weights determine the ranking.</p>
+<div class="pwiz">
+<div class="pwiz-inner">
+
+  <div class="pwiz-prog"><div class="pwiz-bar" id="pbar" style="width:16%"></div></div>
+  <div class="pwiz-label"><span id="plabel">Criterion 1 of 6</span><span id="ppct"></span></div>
+
+  <div id="pqs-wrap"></div>
+
+  <div class="wiz-nav" style="margin-top:0">
+    <button class="bo" id="pbtn-back" onclick="pBack()"><svg class="ic" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M13 8H3M7 12l-4-4 4-4"/></svg> Back</button>
+    <button class="bn" id="pbtn-next" onclick="pNext()">Next <svg class="ic" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg></button>
   </div>
-  <div class="plist fu d2" id="pl"></div>
-  <div class="ibox fu d3">
-    <strong>How scoring works</strong>
-    Each slider sets how much weight that criterion carries in your final score. Move it higher and that dimension matters more. Each criterion is scored 0 to 100 using real data from OECD, World Bank, IMD, and EPO. We also apply a fixed 15% bonus based on how easy it is to expand from Spain into each country, covering EU membership, language, distance, and regulatory friction. Final score = 85% your weighted criteria + 15% Spain compatibility.
-  </div>
-  <div class="brow fu d4">
-    <button class="bo" onclick="g1()"><svg class="ic" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M13 8H3M7 12l-4-4 4-4"/></svg> Back</button>
-    <div class="sp"></div>
-    <button class="bn" onclick="g3()">Generate recommendation <svg class="ic" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg></button>
-  </div>
-</div></div>
+
+</div>
+</div>
 </div>
 
 <!-- SCREEN 3 -->
@@ -290,7 +405,7 @@ footer{background:var(--navyd);padding:22px 2rem}
     <div class="tblk">
       <div class="th">
         <div><div class="th-t">Full country ranking</div><div class="th-s">Weighted score · base (85%) + Spain-fit (15%)</div></div>
-        <button class="bo" style="padding:8px 14px;font-size:10px" onclick="g2()">Adjust priorities</button>
+        <button class="bo" style="padding:8px 14px;font-size:10px" onclick="buildPQ();showS(2)">Adjust priorities</button>
       </div>
       <div class="tscroll">
         <table>
@@ -365,7 +480,7 @@ footer{background:var(--navyd);padding:22px 2rem}
       <span class="stg">World Bank GDP and Trade Statistics</span>
     </div>
     <div class="brow" style="margin-top:1.6rem">
-      <button class="bw" onclick="g2()"><svg class="ic" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M13 8H3M7 12l-4-4 4-4"/></svg> Adjust priorities</button>
+      <button class="bw" onclick="buildPQ();showS(2)"><svg class="ic" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M13 8H3M7 12l-4-4 4-4"/></svg> Adjust priorities</button>
       <button class="bw" onclick="window.print()">Export</button>
       <div class="sp"></div>
       <button class="bn" style="background:#fff;color:var(--navy)" onclick="rst()">New analysis</button>
@@ -420,7 +535,85 @@ const CM={
 let W={eco:8,com:7,tal:6,mkt:6,reg:5,cst:4};
 let firm={};let res=[];
 
-function pick(g,el){document.querySelectorAll('#'+g+' .copt').forEach(o=>o.classList.remove('sel'));el.classList.add('sel');}
+/* ── FIRM WIZARD ── */
+const WLABELS=['Company','Technology','Stage','Team','Customers','Goal'];
+let wStep=1;
+
+function wUpdateDots(s){
+  for(let i=1;i<=6;i++){
+    const d=document.getElementById('wd'+i);
+    d.classList.toggle('done',i<s);
+    d.classList.toggle('active',i===s);
+  }
+  document.getElementById('wlabel').textContent=WLABELS[s-1];
+}
+function wShowQ(s){
+  document.querySelectorAll('.qs').forEach(q=>q.classList.remove('active'));
+  document.getElementById('wq'+s).classList.add('active');
+  wUpdateDots(s);
+  wStep=s;
+  window.scrollTo(0,0);
+}
+function wNext(s){wShowQ(s+1);}
+function wBack(s){wShowQ(s-1);}
+function wPick(grpId,el,field){
+  document.querySelectorAll('#'+grpId+' .wopt').forEach(o=>o.classList.remove('sel'));
+  el.classList.add('sel');
+  firm[field]=el.querySelector('.wopt-t').textContent;
+}
+function wFinish(){
+  firm.name=document.getElementById('fn').value.trim()||'Your Startup';
+  buildPQ();showS(2);
+}
+
+/* ── PRIORITY WIZARD ── */
+let pStep=0;
+
+function buildPQ(){
+  document.getElementById('pqs-wrap').innerHTML='';
+  CK.forEach((k,i)=>{
+    const div=document.createElement('div');
+    div.className='pqs'+(i===0?' active':'');
+    div.id='pqs'+i;
+    div.innerHTML=`
+      <div class="pqs-eye">Criterion ${i+1} of ${CK.length}</div>
+      <div class="pqs-q">${CM[k].label}</div>
+      <div class="pqs-d">${CM[k].desc}</div>
+      <div class="pslider-wrap">
+        <div class="psl-val" id="psv${k}">${W[k]}</div>
+        <div class="psl-pct" id="psp${k}">— of total weight</div>
+        <input type="range" class="psl" min="1" max="10" step="1" value="${W[k]}" oninput="uw('${k}',+this.value)">
+        <div class="psl-mm"><span>Not critical</span><span>Very high priority</span></div>
+      </div>`;
+    document.getElementById('pqs-wrap').appendChild(div);
+  });
+  pStep=0;
+  upcts();
+  pUpdateUI();
+}
+function pUpdateUI(){
+  document.getElementById('pbar').style.width=((pStep+1)/CK.length*100)+'%';
+  document.getElementById('plabel').textContent='Criterion '+(pStep+1)+' of '+CK.length;
+  const k=CK[pStep];const tw=Object.values(W).reduce((a,b)=>a+b)||1;
+  document.getElementById('ppct').textContent=Math.round(W[k]/tw*100)+'% of total weight';
+  document.getElementById('pbtn-back').style.visibility=pStep===0?'hidden':'visible';
+  document.getElementById('pbtn-next').textContent=pStep===CK.length-1?'Generate results →':'Next';
+}
+function pNext(){
+  if(pStep===CK.length-1){res=compute();render();showS(3);return;}
+  document.getElementById('pqs'+pStep).classList.remove('active');
+  pStep++;
+  document.getElementById('pqs'+pStep).classList.add('active');
+  pUpdateUI();window.scrollTo(0,0);
+}
+function pBack(){
+  if(pStep===0){showS(1);return;}
+  document.getElementById('pqs'+pStep).classList.remove('active');
+  pStep--;
+  document.getElementById('pqs'+pStep).classList.add('active');
+  pUpdateUI();window.scrollTo(0,0);
+}
+
 function ac(c){const m={H:1,M:.95,L:.9};return c.map(x=>m[x]||.95).reduce((a,b)=>a+b)/c.length;}
 function cs(k,ci){return CSUB[k].reduce((s,sk,i)=>s+RAW[k].w[i]*RAW[k][sk][ci],0);}
 function sfs(ci){return['eu','english','friction','distance','divValue'].reduce((s,k,i)=>s+SFD.w[i]*SFD[k][ci],0);}
@@ -440,26 +633,26 @@ function showS(n){
   [1,2,3].forEach(i=>{const el=document.getElementById('ss'+i);el.classList.toggle('active',i===n);el.classList.toggle('done',i<n);});
   window.scrollTo(0,0);
 }
-function g1(){showS(1);}
-function g2(){firm.name=document.getElementById('fn').value.trim()||'Your Startup';firm.tech=document.getElementById('ft').value;firm.stage=document.getElementById('fs').value;buildPL();showS(2);}
+function g1(){wShowQ(1);showS(1);}
 function g3(){res=compute();render();showS(3);}
-function rst(){showS(1);}
+function rst(){wShowQ(1);showS(1);}
 
-function buildPL(){
-  document.getElementById('pl').innerHTML=CK.map(k=>`
-    <div class="pi">
-      <div>
-        <div class="pi-n">${CM[k].label}</div>
-        <div class="pi-d">${CM[k].desc}</div>
-        <input type="range" class="pi-sl" min="1" max="10" step="1" value="${W[k]}" oninput="uw('${k}',+this.value)">
-        <div class="pi-mm"><span>Not critical</span><span>Very high priority</span></div>
-      </div>
-      <div class="pi-r"><div class="pi-v" id="pv${k}">${W[k]}</div><div class="pi-p" id="pp${k}">—</div></div>
-    </div>`).join('');
+function uw(k,v){
+  W[k]=v;
+  const sv=document.getElementById('psv'+k);
+  if(sv)sv.textContent=v;
   upcts();
+  pUpdateUI();
 }
-function uw(k,v){W[k]=v;document.getElementById('pv'+k).textContent=v;upcts();}
-function upcts(){const tw=Object.values(W).reduce((a,b)=>a+b)||1;CK.forEach(k=>{const el=document.getElementById('pp'+k);if(el)el.textContent=Math.round(W[k]/tw*100)+'%';});}
+function upcts(){
+  const tw=Object.values(W).reduce((a,b)=>a+b)||1;
+  CK.forEach(k=>{
+    const el=document.getElementById('psp'+k);
+    if(el)el.textContent=Math.round(W[k]/tw*100)+'% of total weight';
+  });
+}
+
+wShowQ(1);
 
 function render(){
   document.getElementById('rbn').textContent=firm.name;

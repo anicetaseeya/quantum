@@ -79,7 +79,8 @@ h2{font-family:'Montserrat',sans-serif;font-weight:900;font-size:1.2rem;letter-s
 .ref{display:grid;grid-template-columns:auto 1fr;gap:12px 16px;padding:12px 16px;background:#fff;border:1px solid var(--gr);font-size:11px;align-items:start}
 .ref-n{font-family:'Montserrat',sans-serif;font-weight:800;font-size:10px;color:var(--navy);white-space:nowrap}
 .ref-body{}
-.ref-title{font-family:'Montserrat',sans-serif;font-weight:700;font-size:11px;color:var(--tx);margin-bottom:2px}
+.ref-title{font-family:'Montserrat',sans-serif;font-weight:700;font-size:11px;color:var(--blue);margin-bottom:2px;text-decoration:none;display:block}
+.ref-title:hover{text-decoration:underline;color:var(--navy)}
 .ref-meta{font-size:10px;color:var(--tx3)}
 
 footer{background:var(--navyd);padding:22px 2rem}
@@ -115,13 +116,6 @@ footer{background:var(--navyd);padding:22px 2rem}
   </div>
   <div class="hero-line"></div>
 </div>
-
-<!-- INTRO -->
-<div class="sec"><div class="sec-in">
-  <div class="intro-block">
-    I built this tool to give Spanish quantum startups a structured, evidence-based way to think about international expansion. I wanted to avoid the usual approach of ranking countries based on reputation or intuition. Instead, I assigned each country a score derived entirely from published indicators — normalised to the same 0 to 100 scale, weighted by what matters most to each startup's situation, and adjusted for how easy it is to expand from Spain specifically. This page documents every data decision I made.
-  </div>
-</div></div>
 
 <!-- CRITERION SOURCES -->
 <div class="sec bg-off"><div class="sec-in">
@@ -464,21 +458,21 @@ footer{background:var(--navyd);padding:22px 2rem}
   <h2>All data sources cited</h2>
   <p class="sec-sub" style="margin-bottom:1.4rem">Listed in order of appearance across the model.</p>
   <div class="ref-list">
-    <div class="ref"><div class="ref-n">01</div><div class="ref-body"><div class="ref-title">OECD Quantum Ecosystem Report 2023</div><div class="ref-meta">Organisation for Economic Co-operation and Development. Used for: government quantum funding levels, research centre density. Published 2023.</div></div></div>
-    <div class="ref"><div class="ref-n">02</div><div class="ref-body"><div class="ref-title">EPO Quantum Technology Patent Insights</div><div class="ref-meta">European Patent Office. Used for: quantum patents filed per country. Dataset covers 2018–2023 patent families.</div></div></div>
-    <div class="ref"><div class="ref-n">03</div><div class="ref-body"><div class="ref-title">Dealroom Quantum Startup Database</div><div class="ref-meta">Dealroom.co. Used for: active quantum startup counts, pilot programme activity. Data accessed March 2025.</div></div></div>
-    <div class="ref"><div class="ref-n">04</div><div class="ref-body"><div class="ref-title">IMD World Digital Competitiveness Ranking 2024</div><div class="ref-meta">Institute for Management Development. Used for: digital competitiveness rank (Commercialisation criterion). 64 economies ranked annually.</div></div></div>
-    <div class="ref"><div class="ref-n">05</div><div class="ref-body"><div class="ref-title">World Bank Worldwide Governance Indicators 2023</div><div class="ref-meta">World Bank Group. Used for: rule of law, regulatory quality (Regulatory Stability criterion). Covers 200+ economies.</div></div></div>
-    <div class="ref"><div class="ref-n">06</div><div class="ref-body"><div class="ref-title">WIPO Global Innovation Index 2024</div><div class="ref-meta">World Intellectual Property Organization. Used for: IP protection sub-index (Regulatory Stability criterion). 133 economies ranked.</div></div></div>
-    <div class="ref"><div class="ref-n">07</div><div class="ref-body"><div class="ref-title">QS World University Rankings 2024</div><div class="ref-meta">Quacquarelli Symonds. Used for: university quality score for physics and computer science faculties (Talent criterion).</div></div></div>
-    <div class="ref"><div class="ref-n">08</div><div class="ref-body"><div class="ref-title">INSEAD Global Talent Competitiveness Index 2024</div><div class="ref-meta">INSEAD, Portulans Institute. Used for: talent openness to foreign firms (Talent criterion). 134 countries covered.</div></div></div>
-    <div class="ref"><div class="ref-n">09</div><div class="ref-body"><div class="ref-title">EF English Proficiency Index 2024</div><div class="ref-meta">Education First. Used for: English proficiency (Talent criterion and Spain-fit bonus). 113 countries ranked.</div></div></div>
-    <div class="ref"><div class="ref-n">10</div><div class="ref-body"><div class="ref-title">Numbeo Cost of Living Database 2024</div><div class="ref-meta">Numbeo.com crowd-sourced database. Used for: average tech salary and overall cost of living (Cost Efficiency criterion).</div></div></div>
-    <div class="ref"><div class="ref-n">11</div><div class="ref-body"><div class="ref-title">KPMG Corporate Tax Rate Survey 2024</div><div class="ref-meta">KPMG International. Used for: headline corporate tax rate (Cost Efficiency criterion). Covers 140+ jurisdictions.</div></div></div>
-    <div class="ref"><div class="ref-n">12</div><div class="ref-body"><div class="ref-title">World Bank National Accounts and Trade Statistics 2023</div><div class="ref-meta">World Bank Group. Used for: GDP size, trade openness as % of GDP, logistics performance index (Market Expansion criterion).</div></div></div>
-    <div class="ref"><div class="ref-n">13</div><div class="ref-body"><div class="ref-title">UNESCO Institute for Statistics — STEM Graduates 2023</div><div class="ref-meta">UNESCO UIS. Used for: STEM graduate output per 100,000 population (Talent criterion).</div></div></div>
-    <div class="ref"><div class="ref-n">14</div><div class="ref-body"><div class="ref-title">World Economic Forum Executive Opinion Survey 2024</div><div class="ref-meta">WEF Global Competitiveness Report. Used for: policy predictability score (Regulatory Stability criterion).</div></div></div>
-    <div class="ref"><div class="ref-n">15</div><div class="ref-body"><div class="ref-title">OECD Digital Economy Outlook 2023</div><div class="ref-meta">Organisation for Economic Co-operation and Development. Used for: HPC and cloud infrastructure availability (Commercialisation criterion).</div></div></div>
+    <div class="ref"><div class="ref-n">01</div><div class="ref-body"><a class="ref-title" href="https://www.oecd.org/en/publications/oecd-reviews-of-innovation-policy-quantum-technologies_f9b36f06-en.html" target="_blank">OECD Quantum Ecosystem Report 2023 ↗</a><div class="ref-meta">Organisation for Economic Co-operation and Development. Used for: government quantum funding levels, research centre density.</div></div></div>
+    <div class="ref"><div class="ref-n">02</div><div class="ref-body"><a class="ref-title" href="https://www.epo.org/en/news-events/in-focus/quantum-technologies" target="_blank">EPO Quantum Technology Patent Insights ↗</a><div class="ref-meta">European Patent Office. Used for: quantum patents filed per country. Dataset covers 2018–2023 patent families.</div></div></div>
+    <div class="ref"><div class="ref-n">03</div><div class="ref-body"><a class="ref-title" href="https://dealroom.co" target="_blank">Dealroom Quantum Startup Database ↗</a><div class="ref-meta">Dealroom.co. Used for: active quantum startup counts, pilot programme activity. Data accessed March 2025.</div></div></div>
+    <div class="ref"><div class="ref-n">04</div><div class="ref-body"><a class="ref-title" href="https://www.imd.org/centers/wcc/world-competitiveness-center/rankings/world-digital-competitiveness-ranking/" target="_blank">IMD World Digital Competitiveness Ranking 2024 ↗</a><div class="ref-meta">Institute for Management Development. Used for: digital competitiveness rank (Commercialisation criterion). 64 economies ranked annually.</div></div></div>
+    <div class="ref"><div class="ref-n">05</div><div class="ref-body"><a class="ref-title" href="https://www.worldbank.org/en/publication/worldwide-governance-indicators" target="_blank">World Bank Worldwide Governance Indicators 2023 ↗</a><div class="ref-meta">World Bank Group. Used for: rule of law, regulatory quality (Regulatory Stability criterion). Covers 200+ economies.</div></div></div>
+    <div class="ref"><div class="ref-n">06</div><div class="ref-body"><a class="ref-title" href="https://www.wipo.int/global_innovation_index/en/" target="_blank">WIPO Global Innovation Index 2024 ↗</a><div class="ref-meta">World Intellectual Property Organization. Used for: IP protection sub-index (Regulatory Stability criterion). 133 economies ranked.</div></div></div>
+    <div class="ref"><div class="ref-n">07</div><div class="ref-body"><a class="ref-title" href="https://www.topuniversities.com/world-university-rankings" target="_blank">QS World University Rankings 2024 ↗</a><div class="ref-meta">Quacquarelli Symonds. Used for: university quality score for physics and computer science faculties (Talent criterion).</div></div></div>
+    <div class="ref"><div class="ref-n">08</div><div class="ref-body"><a class="ref-title" href="https://gtcistudy.com" target="_blank">INSEAD Global Talent Competitiveness Index 2024 ↗</a><div class="ref-meta">INSEAD, Portulans Institute. Used for: talent openness to foreign firms (Talent criterion). 134 countries covered.</div></div></div>
+    <div class="ref"><div class="ref-n">09</div><div class="ref-body"><a class="ref-title" href="https://www.ef.com/wwen/epi/" target="_blank">EF English Proficiency Index 2024 ↗</a><div class="ref-meta">Education First. Used for: English proficiency (Talent criterion and Spain-fit bonus). 113 countries ranked.</div></div></div>
+    <div class="ref"><div class="ref-n">10</div><div class="ref-body"><a class="ref-title" href="https://www.numbeo.com/cost-of-living/" target="_blank">Numbeo Cost of Living Database 2024 ↗</a><div class="ref-meta">Numbeo.com. Used for: average tech salary and overall cost of living (Cost Efficiency criterion).</div></div></div>
+    <div class="ref"><div class="ref-n">11</div><div class="ref-body"><a class="ref-title" href="https://kpmg.com/xx/en/home/services/tax/tax-tools-and-resources/tax-rates-online/corporate-tax-rates-table.html" target="_blank">KPMG Corporate Tax Rate Survey 2024 ↗</a><div class="ref-meta">KPMG International. Used for: headline corporate tax rate (Cost Efficiency criterion). Covers 140+ jurisdictions.</div></div></div>
+    <div class="ref"><div class="ref-n">12</div><div class="ref-body"><a class="ref-title" href="https://data.worldbank.org/indicator/NY.GDP.MKTP.CD" target="_blank">World Bank National Accounts and Trade Statistics 2023 ↗</a><div class="ref-meta">World Bank Group. Used for: GDP size, trade openness as % of GDP, logistics performance index (Market Expansion criterion).</div></div></div>
+    <div class="ref"><div class="ref-n">13</div><div class="ref-body"><a class="ref-title" href="https://uis.unesco.org/en/topic/science-technology-and-innovation" target="_blank">UNESCO Institute for Statistics — STEM Graduates 2023 ↗</a><div class="ref-meta">UNESCO UIS. Used for: STEM graduate output per 100,000 population (Talent criterion).</div></div></div>
+    <div class="ref"><div class="ref-n">14</div><div class="ref-body"><a class="ref-title" href="https://www.weforum.org/publications/the-global-competitiveness-report-2024/" target="_blank">World Economic Forum Executive Opinion Survey 2024 ↗</a><div class="ref-meta">WEF Global Competitiveness Report. Used for: policy predictability score (Regulatory Stability criterion).</div></div></div>
+    <div class="ref"><div class="ref-n">15</div><div class="ref-body"><a class="ref-title" href="https://www.oecd.org/en/publications/oecd-digital-economy-outlook-2024_562c08fd-en.html" target="_blank">OECD Digital Economy Outlook 2023 ↗</a><div class="ref-meta">Organisation for Economic Co-operation and Development. Used for: HPC and cloud infrastructure availability (Commercialisation criterion).</div></div></div>
   </div>
 </div></div>
 
