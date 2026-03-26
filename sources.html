@@ -88,6 +88,11 @@ footer{background:var(--navyd);padding:22px 2rem}
 .fl{font-family:'Montserrat',sans-serif;font-weight:900;font-size:.85rem;color:#fff}
 .fl span{font-weight:300;color:rgba(255,255,255,.35);font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;margin-left:6px}
 .fc{font-size:10px;color:rgba(255,255,255,.2);font-family:'Montserrat',sans-serif}
+.mg{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:1.2rem}
+.mc{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);padding:20px}
+.mc-t{font-family:'Montserrat',sans-serif;font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.55);margin-bottom:8px}
+.mc-b{font-size:12px;color:rgba(255,255,255,.55);line-height:1.8}
+@media(max-width:640px){.mg{grid-template-columns:1fr}}
 
 @media(max-width:640px){
   .crit-grid{grid-template-columns:1fr}
@@ -116,6 +121,21 @@ footer{background:var(--navyd);padding:22px 2rem}
   </div>
   <div class="hero-line"></div>
 </div>
+
+<!-- HOW THE MODEL WORKS -->
+<div style="background:var(--navy);padding:40px 2rem"><div style="max-width:960px;margin:0 auto">
+  <div class="sec-eye" style="color:rgba(255,255,255,.45);margin-bottom:8px">Scoring logic</div>
+  <h2 style="color:#fff;font-family:'Montserrat',sans-serif;font-weight:900;font-size:clamp(1.1rem,2vw,1.4rem);letter-spacing:-.02em;margin-bottom:6px">How the model works</h2>
+  <p style="font-size:12px;color:rgba(255,255,255,.45);max-width:560px;margin-bottom:24px;line-height:1.8">Each country score is built in six steps from published data. No subjective judgement is applied after the data is collected.</p>
+  <div class="mg">
+    <div class="mc"><div class="mc-t">Step 1 — Data collection</div><div class="mc-b">I pulled published indicators from OECD, World Bank, EPO, IMD, WIPO, QS, EF, Numbeo, and KPMG. Each indicator is a concrete number — for example: quantum patents filed (EPO), rule of law score (World Bank WGI), average tech salary (Numbeo), or corporate tax rate (KPMG 2024).</div></div>
+    <div class="mc"><div class="mc-t">Step 2 — Scoring 0 to 100</div><div class="mc-b">All indicators are converted to a 0 to 100 scale so they can be compared across countries. The best-performing country gets 100 and the weakest gets 0. Cost indicators are flipped — cheaper means a higher score.</div></div>
+    <div class="mc"><div class="mc-t">Step 3 — Building each criterion</div><div class="mc-b">Each of the 6 criteria is built from 4 indicators with fixed weights. For example, Quantum Ecosystem = government quantum funding 35% (OECD 2023) + quantum startups 25% (Dealroom) + research centre density 20% (OECD) + quantum patents 20% (EPO).</div></div>
+    <div class="mc"><div class="mc-t">Step 4 — Applying your weights</div><div class="mc-b">The sliders in the tool control how much each criterion counts toward the final score. Slider values are converted to percentages automatically so they always add up to 100%. Countries rank differently depending on what you prioritise.</div></div>
+    <div class="mc"><div class="mc-t">Step 5 — Spain compatibility bonus</div><div class="mc-b">15% of the final score comes from how easy it is to expand from Spain into each country — covering EU membership, English proficiency (EF EPI 2024), geographic distance from Madrid, and diversification value.</div></div>
+    <div class="mc"><div class="mc-t">Step 6 — Confidence adjustment</div><div class="mc-b">Indicators from hard official datasets are marked High confidence. Proxy data is Medium. Analytical estimates are Low. Low-confidence indicators are discounted by 10% so uncertain data has less influence on the result.</div></div>
+  </div>
+</div></div>
 
 <!-- CRITERION SOURCES -->
 <div class="sec bg-off"><div class="sec-in">

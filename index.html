@@ -435,55 +435,13 @@ footer{background:var(--navyd);padding:22px 2rem}
     <div class="radwrap"><canvas id="rad" width="480" height="340"></canvas></div>
   </div></div>
 
-  <div class="sec bg-navy"><div class="sec-in">
-    <div class="eye lt">Transparency</div>
-    <h2 class="lt">How the model works</h2>
-    <p class="sub lt" style="max-width:620px;margin-bottom:1.6rem">Every country score is built from real public data, not guesswork. Here is exactly what goes into the model and where each number comes from.</p>
-    <div class="mg">
-      <div class="mc">
-        <div class="mc-t">Step 1 — Data collection</div>
-        <div class="mc-b">We pull published indicators from OECD, World Bank, EPO, IMD, WIPO, QS, EF, Numbeo, and KPMG. Each indicator is a concrete number — for example: quantum patents filed (EPO), rule of law score (World Bank WGI), average tech salary (Numbeo), or corporate tax rate (KPMG 2024).</div>
-      </div>
-      <div class="mc">
-        <div class="mc-t">Step 2 — Scoring 0 to 100</div>
-        <div class="mc-b">All indicators are converted to a 0 to 100 scale so they can be compared across countries. The best-performing country gets 100 and the weakest gets 0. Cost indicators are flipped — cheaper means a higher score.</div>
-      </div>
-      <div class="mc">
-        <div class="mc-t">Step 3 — Building each criterion</div>
-        <div class="mc-b">Each of the 6 criteria is built from 4 indicators with fixed weights. For example, Quantum Ecosystem = government quantum funding 35% (OECD 2023) + number of quantum startups 25% (Dealroom) + research centre density 20% (OECD) + quantum patents 20% (EPO). The same logic applies to all criteria.</div>
-      </div>
-      <div class="mc">
-        <div class="mc-t">Step 4 — Applying your weights</div>
-        <div class="mc-b">The sliders on the previous screen control how much each criterion counts toward the final score. If you set Talent very high, countries with strong universities and STEM output will rank higher. Your slider values are converted to percentages automatically so they always add up to 100%.</div>
-      </div>
-      <div class="mc">
-        <div class="mc-t">Step 5 — Spain compatibility bonus</div>
-        <div class="mc-b">15% of the final score comes from how easy it is to expand from Spain into each country. This covers EU single market membership (World Bank ease of doing business), English proficiency (EF EPI 2024), geographic distance from Madrid, and how different that market is as a diversification opportunity.</div>
-      </div>
-      <div class="mc">
-        <div class="mc-t">Step 6 — Confidence adjustment</div>
-        <div class="mc-b">Some indicators come from hard official datasets and are marked High confidence. Others use proxy data or estimates and are marked Medium or Low. Low-confidence indicators are discounted by 10% so they have less influence on the result. The confidence letter next to each country reflects the overall data quality for that market.</div>
-      </div>
-    </div>
-    <div class="stgs">
-      <span class="stg">OECD Quantum Ecosystem 2023</span>
-      <span class="stg">EPO Quantum Patent Database</span>
-      <span class="stg">World Bank WGI 2023</span>
-      <span class="stg">IMD Digital Competitiveness 2024</span>
-      <span class="stg">WIPO Global Innovation Index 2024</span>
-      <span class="stg">INSEAD Global Talent Competitiveness Index</span>
-      <span class="stg">QS World University Rankings 2024</span>
-      <span class="stg">EF English Proficiency Index 2024</span>
-      <span class="stg">Numbeo Cost of Living 2024</span>
-      <span class="stg">KPMG Corporate Tax Tables 2024</span>
-      <span class="stg">Dealroom Quantum Startup Data</span>
-      <span class="stg">World Bank GDP and Trade Statistics</span>
-    </div>
-    <div class="brow" style="margin-top:1.6rem">
-      <button class="bw" onclick="buildPQ();showS(2)"><svg class="ic" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M13 8H3M7 12l-4-4 4-4"/></svg> Adjust priorities</button>
-      <button class="bw" onclick="window.print()">Export</button>
+  <div class="sec bg-off"><div class="sec-in">
+    <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap">
+      <button class="bo" onclick="buildPQ();showS(2)"><svg class="ic" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M13 8H3M7 12l-4-4 4-4"/></svg> Adjust priorities</button>
+      <a href="sources.html" class="bo" style="text-decoration:none">View methodology and sources</a>
       <div class="sp"></div>
-      <button class="bn" style="background:#fff;color:var(--navy)" onclick="rst()">New analysis</button>
+      <button class="bo" onclick="window.print()">Export</button>
+      <button class="bn" onclick="rst()">New analysis</button>
     </div>
   </div></div>
 
