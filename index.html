@@ -367,13 +367,13 @@ footer{background:var(--navyd);padding:22px 2rem}
 <div class="pwiz">
 <div class="pwiz-inner">
 
+  <div style="margin-bottom:28px">
+    <div style="font-family:'Montserrat',sans-serif;font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--blue);margin-bottom:8px">Why companies weight criteria differently</div>
+    <p style="font-size:12px;color:var(--tx2);line-height:1.8;max-width:560px">No two companies expand for the same reason. A team focused on hiring deep-tech talent will evaluate countries differently from one trying to minimise costs or find early enterprise customers. Use the sliders below to weight each criterion based on your priorities. The ranking updates in real time.</p>
+  </div>
+
   <div class="pwiz-prog"><div class="pwiz-bar" id="pbar" style="width:16%"></div></div>
   <div class="pwiz-label"><span id="plabel">Criterion 1 of 6</span><span id="ppct"></span></div>
-
-  <div style="background:#fff;border:1px solid var(--gr);padding:16px 20px;margin-bottom:28px;font-size:12px;color:var(--tx2);line-height:1.8">
-    <strong style="font-family:'Montserrat',sans-serif;font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--navy);display:block;margin-bottom:6px">Why companies weight criteria differently</strong>
-    No two companies expand for the same reason. A startup focused on hiring deep-tech talent will evaluate countries differently from one trying to minimise operating costs or find early enterprise customers. A company building hardware needs strong manufacturing ecosystems; one selling software cares more about digital readiness and regulatory predictability. These sliders let you weight each criterion to reflect your actual strategic priorities — the ranking updates in real time based on what matters most at your current stage.
-  </div>
 
   <div id="pqs-wrap"></div>
 
@@ -544,7 +544,7 @@ function buildPQ(){
       <div class="pqs-d">${CM[k].desc}</div>
       <div class="pslider-wrap">
         <div class="psl-val" id="psv${k}">${W[k]}</div>
-        <div class="psl-pct" id="psp${k}">— of total weight</div>
+        <div class="psl-pct" id="psp${k}"></div>
         <input type="range" class="psl" min="1" max="10" step="1" value="${W[k]}" oninput="uw('${k}',+this.value)">
         <div class="psl-mm"><span>Not critical</span><span>Very high priority</span></div>
       </div>`;
