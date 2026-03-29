@@ -128,9 +128,9 @@ footer{background:var(--navyd);padding:22px 2rem}
   <h2 style="color:#fff;font-family:'Montserrat',sans-serif;font-weight:900;font-size:clamp(1.1rem,2vw,1.4rem);letter-spacing:-.02em;margin-bottom:6px">How the model works</h2>
   <p style="font-size:12px;color:rgba(255,255,255,.45);max-width:560px;margin-bottom:24px;line-height:1.8">Each country score is built in six steps from published data. No subjective judgement is applied after the data is collected.</p>
   <div class="mg">
-    <div class="mc"><div class="mc-t">Step 1 — Data collection</div><div class="mc-b">I pulled published indicators from OECD, World Bank, EPO, IMD, WIPO, QS, EF, Numbeo, and KPMG. Each indicator is a concrete number — for example: quantum patents filed (EPO), rule of law score (World Bank WGI), average tech salary (Numbeo), or corporate tax rate (KPMG 2024).</div></div>
+    <div class="mc"><div class="mc-t">Step 1 — Data collection</div><div class="mc-b">I pulled published indicators from OECD, World Bank, EPO, WIPO, QS, INSEAD, EF, Numbeo, KPMG, WEF, and Dealroom. Each indicator is a concrete number — for example: quantum patents filed (EPO), rule of law score (World Bank WGI), average tech salary (Numbeo), or corporate tax rate (KPMG 2024).</div></div>
     <div class="mc"><div class="mc-t">Step 2 — Scoring 0 to 100</div><div class="mc-b">All indicators are converted to a 0 to 100 scale so they can be compared across countries. The best-performing country gets 100 and the weakest gets 0. Cost indicators are flipped — cheaper means a higher score.</div></div>
-    <div class="mc"><div class="mc-t">Step 3 — Building each criterion</div><div class="mc-b">Each of the 6 criteria is built from 4 indicators with fixed weights. For example, Quantum Ecosystem = government quantum funding 35% (OECD 2023) + quantum startups 25% (Dealroom) + research centre density 20% (OECD) + quantum patents 20% (EPO).</div></div>
+    <div class="mc"><div class="mc-t">Step 3 — Building each criterion</div><div class="mc-b">Each of the 6 criteria is built from 4 indicators with fixed weights. For example, Quantum Ecosystem = government quantum funding 35% (OECD 2025) + quantum startups 25% (Dealroom) + research centre density 20% (OECD 2025) + quantum patents 20% (EPO).</div></div>
     <div class="mc"><div class="mc-t">Step 4 — Applying your weights</div><div class="mc-b">The sliders in the tool control how much each criterion counts toward the final score. Slider values are converted to percentages automatically so they always add up to 100%. Countries rank differently depending on what you prioritise.</div></div>
     <div class="mc"><div class="mc-t">Step 5 — Spain compatibility bonus</div><div class="mc-b">15% of the final score comes from how easy it is to expand from Spain into each country — covering EU membership, English proficiency (EF EPI 2024), geographic distance from Madrid, and diversification value.</div></div>
     <div class="mc"><div class="mc-t">Step 6 — Confidence adjustment</div><div class="mc-b">Indicators from hard official datasets are marked High confidence. Proxy data is Medium. Analytical estimates are Low. Low-confidence indicators are discounted by 10% so uncertain data has less influence on the result.</div></div>
@@ -154,7 +154,7 @@ footer{background:var(--navyd);padding:22px 2rem}
         <div class="ind">
           <div>
             <div class="ind-name">Government quantum funding</div>
-            <div class="ind-src">OECD Quantum Ecosystem Report 2023</div>
+            <div class="ind-src">OECD Mapping the Global Quantum Ecosystem 2025</div>
             <div class="ind-desc">Total national public investment in quantum technologies, in USD equivalent. I used the most recent published national strategy figures.</div>
           </div>
           <div class="ind-w">35%</div>
@@ -162,7 +162,7 @@ footer{background:var(--navyd);padding:22px 2rem}
         <div class="ind">
           <div>
             <div class="ind-name">Number of active quantum startups</div>
-            <div class="ind-src">Dealroom.co quantum company database</div>
+            <div class="ind-src">Dealroom Quantum Company List</div>
             <div class="ind-desc">Count of quantum-focused startups founded after 2015 with at least seed-stage funding. Accessed March 2025.</div>
           </div>
           <div class="ind-w">25%</div>
@@ -170,7 +170,7 @@ footer{background:var(--navyd);padding:22px 2rem}
         <div class="ind">
           <div>
             <div class="ind-name">Research centre density</div>
-            <div class="ind-src">OECD Science and Technology Indicators 2023</div>
+            <div class="ind-src">OECD Mapping the Global Quantum Ecosystem 2025</div>
             <div class="ind-desc">Number of public research institutions with active quantum programmes, normalised by country GDP to adjust for size.</div>
           </div>
           <div class="ind-w">20%</div>
@@ -178,7 +178,7 @@ footer{background:var(--navyd);padding:22px 2rem}
         <div class="ind">
           <div>
             <div class="ind-name">Quantum patents filed</div>
-            <div class="ind-src">EPO Quantum Technology Patent Insights 2023</div>
+            <div class="ind-src">EPO Technology Insight Reports — Quantum</div>
             <div class="ind-desc">Number of patent families filed with quantum technology classifications (IPC H01L39, G06N10) over the last five years.</div>
           </div>
           <div class="ind-w">20%</div>
@@ -195,7 +195,7 @@ footer{background:var(--navyd);padding:22px 2rem}
         <div class="ind">
           <div>
             <div class="ind-name">Digital competitiveness rank</div>
-            <div class="ind-src">IMD World Digital Competitiveness Ranking 2024</div>
+            <div class="ind-src">Digital Competitiveness Full Report 2024</div>
             <div class="ind-desc">Overall rank inverted and normalised. Covers technology, knowledge, and future readiness. Higher rank means a more digitally advanced economy.</div>
           </div>
           <div class="ind-w">30%</div>
@@ -203,7 +203,7 @@ footer{background:var(--navyd);padding:22px 2rem}
         <div class="ind">
           <div>
             <div class="ind-name">Industrial base maturity</div>
-            <div class="ind-src">World Bank Manufacturing Value Added 2023</div>
+            <div class="ind-src">World Bank WITS Country Statistics</div>
             <div class="ind-desc">Manufacturing value added as a percentage of GDP, used as a proxy for the density of industrial customers who are likely early adopters of quantum sensing and computing.</div>
           </div>
           <div class="ind-w">30%</div>
@@ -211,7 +211,7 @@ footer{background:var(--navyd);padding:22px 2rem}
         <div class="ind">
           <div>
             <div class="ind-name">Pilot programme activity</div>
-            <div class="ind-src">Dealroom / Crunchbase quantum deal data 2023–2024</div>
+            <div class="ind-src">Dealroom Quantum Company List</div>
             <div class="ind-desc">Number of enterprise quantum pilot contracts announced publicly in the last two years. Used as a leading indicator of commercial willingness.</div>
           </div>
           <div class="ind-w">20%</div>
@@ -219,7 +219,7 @@ footer{background:var(--navyd);padding:22px 2rem}
         <div class="ind">
           <div>
             <div class="ind-name">HPC and cloud infrastructure</div>
-            <div class="ind-src">OECD Digital Economy Outlook 2023</div>
+            <div class="ind-src">OECD Digital Economy Outlook</div>
             <div class="ind-desc">Availability of high-performance computing and cloud infrastructure, which determines whether quantum hybrid applications can be deployed in that market.</div>
           </div>
           <div class="ind-w">20%</div>
@@ -236,7 +236,7 @@ footer{background:var(--navyd);padding:22px 2rem}
         <div class="ind">
           <div>
             <div class="ind-name">University quality</div>
-            <div class="ind-src">QS World University Rankings 2024</div>
+            <div class="ind-src">QS World University Rankings</div>
             <div class="ind-desc">Average QS score of the top 3 universities in each country for physics and computer science. Normalised 0 to 100.</div>
           </div>
           <div class="ind-w">30%</div>
@@ -244,7 +244,7 @@ footer{background:var(--navyd);padding:22px 2rem}
         <div class="ind">
           <div>
             <div class="ind-name">STEM graduate output</div>
-            <div class="ind-src">UNESCO Institute for Statistics 2023</div>
+            <div class="ind-src">UNESCO UIS via World Bank Data360</div>
             <div class="ind-desc">Annual number of STEM graduates per 100,000 population. Captures pipeline depth rather than just elite institution quality.</div>
           </div>
           <div class="ind-w">25%</div>
@@ -252,7 +252,7 @@ footer{background:var(--navyd);padding:22px 2rem}
         <div class="ind">
           <div>
             <div class="ind-name">Talent openness to foreign firms</div>
-            <div class="ind-src">INSEAD Global Talent Competitiveness Index 2024</div>
+            <div class="ind-src">INSEAD Global Talent Competitiveness Index</div>
             <div class="ind-desc">Measures how easily foreign companies can attract and retain local talent. Includes visa friction, labour flexibility, and international experience of workforce.</div>
           </div>
           <div class="ind-w">25%</div>
@@ -260,7 +260,7 @@ footer{background:var(--navyd);padding:22px 2rem}
         <div class="ind">
           <div>
             <div class="ind-name">English proficiency</div>
-            <div class="ind-src">EF English Proficiency Index 2024</div>
+            <div class="ind-src">EF EPI via World Population Review</div>
             <div class="ind-desc">Country-level English proficiency score. Relevant for Spanish startups hiring internationally without requiring local language fluency.</div>
           </div>
           <div class="ind-w">20%</div>
@@ -277,7 +277,7 @@ footer{background:var(--navyd);padding:22px 2rem}
         <div class="ind">
           <div>
             <div class="ind-name">GDP size</div>
-            <div class="ind-src">World Bank National Accounts 2023</div>
+            <div class="ind-src">World Bank WITS Country Statistics</div>
             <div class="ind-desc">Nominal GDP in current USD. Used as a broad proxy for the size of the addressable enterprise and government market.</div>
           </div>
           <div class="ind-w">30%</div>
@@ -285,7 +285,7 @@ footer{background:var(--navyd);padding:22px 2rem}
         <div class="ind">
           <div>
             <div class="ind-name">Regional gateway value</div>
-            <div class="ind-src">World Bank Regional Trade Statistics 2023</div>
+            <div class="ind-src">World Bank WITS Country Statistics</div>
             <div class="ind-desc">A composite score reflecting whether the country serves as a hub for its wider region — measured by intra-regional trade share and foreign subsidiary density.</div>
           </div>
           <div class="ind-w">25%</div>
@@ -293,7 +293,7 @@ footer{background:var(--navyd);padding:22px 2rem}
         <div class="ind">
           <div>
             <div class="ind-name">Trade openness index</div>
-            <div class="ind-src">World Bank Trade as % of GDP 2023</div>
+            <div class="ind-src">World Bank WITS Country Statistics</div>
             <div class="ind-desc">Exports plus imports as a share of GDP. Higher openness correlates with easier market entry and lower barriers for foreign product sales.</div>
           </div>
           <div class="ind-w">25%</div>
@@ -301,7 +301,7 @@ footer{background:var(--navyd);padding:22px 2rem}
         <div class="ind">
           <div>
             <div class="ind-name">Access to neighbouring markets</div>
-            <div class="ind-src">World Bank Logistics Performance Index 2023</div>
+            <div class="ind-src">World Bank WITS Country Statistics</div>
             <div class="ind-desc">How easily a company based in that country can serve adjacent markets. Especially relevant for regional expansion strategies beyond the first target country.</div>
           </div>
           <div class="ind-w">20%</div>
@@ -318,7 +318,7 @@ footer{background:var(--navyd);padding:22px 2rem}
         <div class="ind">
           <div>
             <div class="ind-name">Rule of law</div>
-            <div class="ind-src">World Bank Worldwide Governance Indicators 2023</div>
+            <div class="ind-src">World Bank WGI via Data360</div>
             <div class="ind-desc">WGI Rule of Law percentile rank. Captures confidence in contract enforcement, property rights, police, and courts.</div>
           </div>
           <div class="ind-w">30%</div>
@@ -326,7 +326,7 @@ footer{background:var(--navyd);padding:22px 2rem}
         <div class="ind">
           <div>
             <div class="ind-name">Regulatory quality</div>
-            <div class="ind-src">World Bank Worldwide Governance Indicators 2023</div>
+            <div class="ind-src">World Bank WGI via Data360</div>
             <div class="ind-desc">WGI Regulatory Quality percentile rank. Measures the ability of the government to formulate and implement sound policies and regulations for private sector development.</div>
           </div>
           <div class="ind-w">25%</div>
@@ -334,7 +334,7 @@ footer{background:var(--navyd);padding:22px 2rem}
         <div class="ind">
           <div>
             <div class="ind-name">Intellectual property protection</div>
-            <div class="ind-src">WIPO Global Innovation Index 2024</div>
+            <div class="ind-src">WIPO Global Innovation Index 2025</div>
             <div class="ind-desc">IP protection sub-index from the WIPO GII. Particularly important for deep-tech firms whose core asset is proprietary technology.</div>
           </div>
           <div class="ind-w">25%</div>
@@ -342,7 +342,7 @@ footer{background:var(--navyd);padding:22px 2rem}
         <div class="ind">
           <div>
             <div class="ind-name">Policy predictability</div>
-            <div class="ind-src">World Economic Forum Executive Opinion Survey 2024</div>
+            <div class="ind-src">WEF Executive Opinion Survey</div>
             <div class="ind-desc">Business leaders' assessment of whether government policy is consistent and predictable over time. Low scores indicate high risk of sudden regulatory change.</div>
           </div>
           <div class="ind-w">20%</div>
@@ -359,7 +359,7 @@ footer{background:var(--navyd);padding:22px 2rem}
         <div class="ind">
           <div>
             <div class="ind-name">Average tech salaries</div>
-            <div class="ind-src">Numbeo Cost of Living Database 2024</div>
+            <div class="ind-src">Numbeo Cost of Living Rankings</div>
             <div class="ind-desc">Average monthly net salary in the tech sector, in USD equivalent. Inverted — lower salaries score higher. Reflects the cost of building a local team.</div>
           </div>
           <div class="ind-w">30%</div>
@@ -367,7 +367,7 @@ footer{background:var(--navyd);padding:22px 2rem}
         <div class="ind">
           <div>
             <div class="ind-name">Company setup costs</div>
-            <div class="ind-src">World Bank Doing Business — Cost to Start a Business 2023</div>
+            <div class="ind-src">World Bank WITS Country Statistics</div>
             <div class="ind-desc">Cost of registering a business as a percentage of income per capita. Inverted — cheaper setup scores higher.</div>
           </div>
           <div class="ind-w">25%</div>
@@ -375,7 +375,7 @@ footer{background:var(--navyd);padding:22px 2rem}
         <div class="ind">
           <div>
             <div class="ind-name">Corporate tax rate</div>
-            <div class="ind-src">KPMG Corporate Tax Rate Survey 2024</div>
+            <div class="ind-src">KPMG Corporate Tax Rates Table</div>
             <div class="ind-desc">Standard headline corporate income tax rate. Inverted — lower tax scores higher. Does not account for special tax regimes or R&D credits.</div>
           </div>
           <div class="ind-w">25%</div>
@@ -383,7 +383,7 @@ footer{background:var(--navyd);padding:22px 2rem}
         <div class="ind">
           <div>
             <div class="ind-name">Cost of living</div>
-            <div class="ind-src">Numbeo Cost of Living Index 2024</div>
+            <div class="ind-src">Numbeo Cost of Living Rankings</div>
             <div class="ind-desc">Overall cost of living index relative to New York City (100). Inverted — lower cost of living scores higher. Affects how far a startup's operational budget stretches.</div>
           </div>
           <div class="ind-w">20%</div>
@@ -408,7 +408,7 @@ footer{background:var(--navyd);padding:22px 2rem}
     </div>
     <div class="sf-card">
       <div class="sf-t">English proficiency</div>
-      <div class="sf-src">EF English Proficiency Index 2024</div>
+      <div class="sf-src">EF EPI via World Population Review</div>
       <div class="sf-d">Country-level English proficiency. Since I am scoring from the perspective of a Spanish team, high English proficiency in the target country reduces communication and hiring friction.</div>
       <div class="sf-w">Weight within Spain-fit: 20%</div>
     </div>
@@ -449,7 +449,7 @@ footer{background:var(--navyd);padding:22px 2rem}
       <tr>
         <td><span class="badge b-h">High</span></td>
         <td>Published by a major international institution with transparent methodology and at least annual updates.</td>
-        <td>World Bank WGI, EPO patent counts, KPMG tax tables, QS rankings, IMD Digital Competitiveness</td>
+        <td>World Bank WGI, EPO patent counts, KPMG tax tables, QS rankings, Digital Competitiveness Report 2024</td>
         <td>None — used at full value</td>
       </tr>
       <tr>
@@ -478,21 +478,21 @@ footer{background:var(--navyd);padding:22px 2rem}
   <h2>All data sources cited</h2>
   <p class="sec-sub" style="margin-bottom:1.4rem">Listed in order of appearance across the model.</p>
   <div class="ref-list">
-    <div class="ref"><div class="ref-n">01</div><div class="ref-body"><a class="ref-title" href="https://www.oecd.org/en/publications/oecd-reviews-of-innovation-policy-quantum-technologies_f9b36f06-en.html" target="_blank">OECD Quantum Ecosystem Report 2023 ↗</a><div class="ref-meta">Organisation for Economic Co-operation and Development. Used for: government quantum funding levels, research centre density.</div></div></div>
-    <div class="ref"><div class="ref-n">02</div><div class="ref-body"><a class="ref-title" href="https://www.epo.org/en/news-events/in-focus/quantum-technologies" target="_blank">EPO Quantum Technology Patent Insights ↗</a><div class="ref-meta">European Patent Office. Used for: quantum patents filed per country. Dataset covers 2018–2023 patent families.</div></div></div>
-    <div class="ref"><div class="ref-n">03</div><div class="ref-body"><a class="ref-title" href="https://dealroom.co" target="_blank">Dealroom Quantum Startup Database ↗</a><div class="ref-meta">Dealroom.co. Used for: active quantum startup counts, pilot programme activity. Data accessed March 2025.</div></div></div>
-    <div class="ref"><div class="ref-n">04</div><div class="ref-body"><a class="ref-title" href="https://www.imd.org/centers/wcc/world-competitiveness-center/rankings/world-digital-competitiveness-ranking/" target="_blank">IMD World Digital Competitiveness Ranking 2024 ↗</a><div class="ref-meta">Institute for Management Development. Used for: digital competitiveness rank (Commercialisation criterion). 64 economies ranked annually.</div></div></div>
-    <div class="ref"><div class="ref-n">05</div><div class="ref-body"><a class="ref-title" href="https://www.worldbank.org/en/publication/worldwide-governance-indicators" target="_blank">World Bank Worldwide Governance Indicators 2023 ↗</a><div class="ref-meta">World Bank Group. Used for: rule of law, regulatory quality (Regulatory Stability criterion). Covers 200+ economies.</div></div></div>
-    <div class="ref"><div class="ref-n">06</div><div class="ref-body"><a class="ref-title" href="https://www.wipo.int/global_innovation_index/en/" target="_blank">WIPO Global Innovation Index 2024 ↗</a><div class="ref-meta">World Intellectual Property Organization. Used for: IP protection sub-index (Regulatory Stability criterion). 133 economies ranked.</div></div></div>
-    <div class="ref"><div class="ref-n">07</div><div class="ref-body"><a class="ref-title" href="https://www.topuniversities.com/world-university-rankings" target="_blank">QS World University Rankings 2024 ↗</a><div class="ref-meta">Quacquarelli Symonds. Used for: university quality score for physics and computer science faculties (Talent criterion).</div></div></div>
-    <div class="ref"><div class="ref-n">08</div><div class="ref-body"><a class="ref-title" href="https://gtcistudy.com" target="_blank">INSEAD Global Talent Competitiveness Index 2024 ↗</a><div class="ref-meta">INSEAD, Portulans Institute. Used for: talent openness to foreign firms (Talent criterion). 134 countries covered.</div></div></div>
-    <div class="ref"><div class="ref-n">09</div><div class="ref-body"><a class="ref-title" href="https://www.ef.com/wwen/epi/" target="_blank">EF English Proficiency Index 2024 ↗</a><div class="ref-meta">Education First. Used for: English proficiency (Talent criterion and Spain-fit bonus). 113 countries ranked.</div></div></div>
-    <div class="ref"><div class="ref-n">10</div><div class="ref-body"><a class="ref-title" href="https://www.numbeo.com/cost-of-living/" target="_blank">Numbeo Cost of Living Database 2024 ↗</a><div class="ref-meta">Numbeo.com. Used for: average tech salary and overall cost of living (Cost Efficiency criterion).</div></div></div>
-    <div class="ref"><div class="ref-n">11</div><div class="ref-body"><a class="ref-title" href="https://kpmg.com/xx/en/home/services/tax/tax-tools-and-resources/tax-rates-online/corporate-tax-rates-table.html" target="_blank">KPMG Corporate Tax Rate Survey 2024 ↗</a><div class="ref-meta">KPMG International. Used for: headline corporate tax rate (Cost Efficiency criterion). Covers 140+ jurisdictions.</div></div></div>
-    <div class="ref"><div class="ref-n">12</div><div class="ref-body"><a class="ref-title" href="https://data.worldbank.org/indicator/NY.GDP.MKTP.CD" target="_blank">World Bank National Accounts and Trade Statistics 2023 ↗</a><div class="ref-meta">World Bank Group. Used for: GDP size, trade openness as % of GDP, logistics performance index (Market Expansion criterion).</div></div></div>
-    <div class="ref"><div class="ref-n">13</div><div class="ref-body"><a class="ref-title" href="https://uis.unesco.org/en/topic/science-technology-and-innovation" target="_blank">UNESCO Institute for Statistics — STEM Graduates 2023 ↗</a><div class="ref-meta">UNESCO UIS. Used for: STEM graduate output per 100,000 population (Talent criterion).</div></div></div>
-    <div class="ref"><div class="ref-n">14</div><div class="ref-body"><a class="ref-title" href="https://www.weforum.org/publications/the-global-competitiveness-report-2024/" target="_blank">World Economic Forum Executive Opinion Survey 2024 ↗</a><div class="ref-meta">WEF Global Competitiveness Report. Used for: policy predictability score (Regulatory Stability criterion).</div></div></div>
-    <div class="ref"><div class="ref-n">15</div><div class="ref-body"><a class="ref-title" href="https://www.oecd.org/en/publications/oecd-digital-economy-outlook-2024_562c08fd-en.html" target="_blank">OECD Digital Economy Outlook 2023 ↗</a><div class="ref-meta">Organisation for Economic Co-operation and Development. Used for: HPC and cloud infrastructure availability (Commercialisation criterion).</div></div></div>
+    <div class="ref"><div class="ref-n">01</div><div class="ref-body"><a class="ref-title" href="https://www.oecd.org/content/dam/oecd/en/publications/reports/2025/12/mapping-the-global-quantum-ecosystem_47891dd2/20251217-0001.pdf" target="_blank">OECD Mapping the Global Quantum Ecosystem 2025 ↗</a><div class="ref-meta">Organisation for Economic Co-operation and Development. Used for: government quantum funding levels, research centre density.</div></div></div>
+    <div class="ref"><div class="ref-n">02</div><div class="ref-body"><a class="ref-title" href="https://www.epo.org/en/searching-for-patents/business/technology-insight-reports" target="_blank">EPO Technology Insight Reports — Quantum ↗</a><div class="ref-meta">European Patent Office. Used for: quantum patents filed per country. Dataset covers 2018–2023 patent families.</div></div></div>
+    <div class="ref"><div class="ref-n">03</div><div class="ref-body"><a class="ref-title" href="https://app.dealroom.co/lists/36190" target="_blank">Dealroom Quantum Company List ↗</a><div class="ref-meta">Dealroom.co. Used for: active quantum startup counts, pilot programme activity. Data accessed March 2025.</div></div></div>
+    <div class="ref"><div class="ref-n">04</div><div class="ref-body"><a class="ref-title" href="https://cedakenticomedia.blob.core.windows.net/cedamediatest/kentico/media/attachments/2024/2024-digital-competitiveness-full-report-final.pdf" target="_blank">Digital Competitiveness Full Report 2024 ↗</a><div class="ref-meta">CEDA. Used for: digital competitiveness rank (Commercialisation criterion). Covers knowledge, technology, and future readiness across leading economies.</div></div></div>
+    <div class="ref"><div class="ref-n">05</div><div class="ref-body"><a class="ref-title" href="https://data360.worldbank.org/en/dataset/WB_WGI" target="_blank">World Bank Worldwide Governance Indicators via Data360 ↗</a><div class="ref-meta">World Bank Group. Used for: rule of law, regulatory quality (Regulatory Stability criterion). Covers 200+ economies.</div></div></div>
+    <div class="ref"><div class="ref-n">06</div><div class="ref-body"><a class="ref-title" href="https://www.wipo.int/web-publications/global-innovation-index-2025/en/gii-2025-results.html" target="_blank">WIPO Global Innovation Index 2025 ↗</a><div class="ref-meta">World Intellectual Property Organization. Used for: IP protection sub-index (Regulatory Stability criterion). 133 economies ranked.</div></div></div>
+    <div class="ref"><div class="ref-n">07</div><div class="ref-body"><a class="ref-title" href="https://www.topuniversities.com/world-university-rankings" target="_blank">QS World University Rankings ↗</a><div class="ref-meta">Quacquarelli Symonds. Used for: university quality score for physics and computer science faculties (Talent criterion).</div></div></div>
+    <div class="ref"><div class="ref-n">08</div><div class="ref-body"><a class="ref-title" href="https://www.insead.edu/global-talent-competitiveness-index" target="_blank">INSEAD Global Talent Competitiveness Index ↗</a><div class="ref-meta">INSEAD, Portulans Institute. Used for: talent openness to foreign firms (Talent criterion). 134 countries covered.</div></div></div>
+    <div class="ref"><div class="ref-n">09</div><div class="ref-body"><a class="ref-title" href="https://worldpopulationreview.com/country-rankings/ef-english-proficiency-index-by-country" target="_blank">EF English Proficiency Index by Country ↗</a><div class="ref-meta">Education First via World Population Review. Used for: English proficiency (Talent criterion and Spain-fit bonus). 113 countries ranked.</div></div></div>
+    <div class="ref"><div class="ref-n">10</div><div class="ref-body"><a class="ref-title" href="https://www.numbeo.com/cost-of-living/rankings.jsp" target="_blank">Numbeo Cost of Living Rankings ↗</a><div class="ref-meta">Numbeo.com. Used for: average tech salary and overall cost of living (Cost Efficiency criterion).</div></div></div>
+    <div class="ref"><div class="ref-n">11</div><div class="ref-body"><a class="ref-title" href="https://kpmg.com/dk/en/services/tax/corporate-tax/corporate-tax-rates-table.html" target="_blank">KPMG Corporate Tax Rates Table ↗</a><div class="ref-meta">KPMG International. Used for: headline corporate tax rate (Cost Efficiency criterion). Covers 140+ jurisdictions.</div></div></div>
+    <div class="ref"><div class="ref-n">12</div><div class="ref-body"><a class="ref-title" href="https://wits.worldbank.org/countrystats.aspx?lang=en" target="_blank">World Bank WITS Country Statistics ↗</a><div class="ref-meta">World Bank Group via WITS. Used for: GDP size, manufacturing value added, trade openness as % of GDP, logistics performance index (Market Expansion criterion).</div></div></div>
+    <div class="ref"><div class="ref-n">13</div><div class="ref-body"><a class="ref-title" href="https://data360.worldbank.org/en/dataset/UNESCO_UIS" target="_blank">UNESCO Institute for Statistics via World Bank Data360 ↗</a><div class="ref-meta">UNESCO UIS. Used for: STEM graduate output per 100,000 population (Talent criterion).</div></div></div>
+    <div class="ref"><div class="ref-n">14</div><div class="ref-body"><a class="ref-title" href="https://centres.weforum.org/centre-for-new-economy-and-society/executive-opinion-survey" target="_blank">WEF Executive Opinion Survey ↗</a><div class="ref-meta">World Economic Forum. Used for: policy predictability score (Regulatory Stability criterion).</div></div></div>
+    <div class="ref"><div class="ref-n">15</div><div class="ref-body"><a class="ref-title" href="https://www.oecd.org/en/publications/oecd-digital-economy-outlook_f0b5c251-en.html" target="_blank">OECD Digital Economy Outlook ↗</a><div class="ref-meta">Organisation for Economic Co-operation and Development. Used for: HPC and cloud infrastructure availability (Commercialisation criterion).</div></div></div>
   </div>
 </div></div>
 
